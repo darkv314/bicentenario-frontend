@@ -1,0 +1,14 @@
+.App {
+    flex-grow: 1;
+    display: grid;
+}
+
+.layout {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.content {
+    display: grid;
+    align-self: stretch;
+}
