@@ -2,25 +2,16 @@ import GamsLogoH from "../../assets/logos/gamsH.png";
 import BicentenarioLogoH from "../../assets/logos/bicH.png";
 import GamsLogoV from "../../assets/logos/gamsV.png";
 import BicentenarioLogoV from "../../assets/logos/bicV.png";
-
 import "./Nav.css";
 import { useWindowWidth } from "@react-hook/window-size";
 import { Link } from "react-router-dom";
+import { Menu } from "../../assets/icons/menu";
+import { navLinkList } from "../../Helpers/Helpers";
 
-function Nav() {
-    const linksList = [
-        {
-            path: "/info-turistica",
-            name: "Turismo",
-        },
-        {
-            path: "/formacion",
-            name: "Formación",
-        },
-    ];
+function Nav({ setMenu }) {
     const width = useWindowWidth();
     return (
-        <nav>
+        <nav className="bicentenario-nav">
             <div className="nav-icons">
                 <NavImg
                     alt={"Logo GAMS"}
@@ -39,12 +30,25 @@ function Nav() {
                     to={"/"}
                 />
             </div>
+
             <div className="nav-links">
-                {linksList.map((link) => (
-                    <Link key={link.path} to={link.path}>
-                        {link.name}
-                    </Link>
-                ))}
+                {width <= 700 ? (
+                    <button
+                        className="nav-menu-button"
+                        onClick={(e) => {
+                            setMenu((menu) => !menu);
+                        }}
+                    >
+                        <Menu className="menu-icon" />
+                    </button>
+                ) : (
+                    navLinkList.map((link) => (
+                        <Link key={link.path} to={link.path}>
+                            {link.name}
+                        </Link>
+                    ))
+                )}
+                {}
             </div>
         </nav>
     );
