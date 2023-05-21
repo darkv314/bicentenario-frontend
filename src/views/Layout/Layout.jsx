@@ -4,12 +4,14 @@ import "./Layout.css";
 
 function Layout() {
     return (
-        <div className="layout">
-            <Nav />
-            <div className="content">
-                <Outlet />
+        <main className="App">
+            <div className="layout">
+                <Nav />
+                <div className="content">
+                    <Outlet />
+                </div>
             </div>
-        </div>
+        </main>
     );
 }
 

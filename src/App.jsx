@@ -1,27 +1,45 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import { Banner } from "./pages/InfoTuristica/Banner/Banner";
 import InfoTuristica from "./pages/InfoTuristica/InfoTuristica";
-import Formacion from "./pages/Formacion/Formacion";
-import Hoteles from "./pages/InfoTuristica/Hoteles/Hoteles";
-import Restaurantes from "./pages/InfoTuristica/Restaurantes/Restaurantes";
+import { Servicios } from "./pages/InfoTuristica/Servicios/Servicios";
+import Turismo from "./pages/InfoTuristica/Turismo/Turismo";
+import Layout from "./views/Layout/Layout";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+    {
+        path: "",
+        element: <Layout />,
+        children: [
+            {
+                path: "",
+                element: <Home />,
+            },
+            {
+                path: "info-turistica",
+                element: <InfoTuristica />,
+                children: [
+                    {
+                        index: true,
+                        element: <Banner />,
+                    },
+                    {
+                        path: "servicios",
+                        element: <Servicios />,
+                    },
+                    {
+                        path: "turismo",
+                        element: <Turismo />,
+                    },
+                ],
+            },
+        ],
+    },
+]);
 
 function App() {
-    return (
-        <Routes>
-            <Route element={<Layout />}>
-                <Route path="/" element={<Home />} />
-                <Route path="/info-turistica" element={<InfoTuristica />} />
-                <Route path="/formacion" element={<Formacion />}>
-                    <Route path="/hoteles" element={<Hoteles />} />
-                    <Route path="/restaurantes" element={<Restaurantes />} />
-                </Route>
-            </Route>
-        </Routes>
-    );
+    return <RouterProvider router={router} />;
 }
 
 export default App;
