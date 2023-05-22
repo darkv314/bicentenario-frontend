@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
+import { Banner } from "../../views/VideoBanner/VideoBanner";
 
 function Home() {
     return (
-        <div>
-            Home
-            <Link to="/info-turistica">Info Turistica</Link>
+        <div className="home">
+            <Banner />
         </div>
     );
 }

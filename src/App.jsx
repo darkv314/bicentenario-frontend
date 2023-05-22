@@ -1,4 +1,3 @@
-import "./App.css";
 import Home from "./pages/Home/Home";
 import { Banner } from "./pages/InfoTuristica/Banner/Banner";
 import InfoTuristica from "./pages/InfoTuristica/InfoTuristica";

@@ -16,8 +16,8 @@ function Layout() {
                     if (menu) setMenu(false);
                 }}
             >
+                <Nav setMenu={setMenu} />
                 <div className="content">
-                    <Nav setMenu={setMenu} />
                     <AnimatePresence>
                         {menu ? <Menu setMenu={setMenu} /> : null}
                     </AnimatePresence>
@@ -57,7 +57,11 @@ function Menu({ setMenu }) {
                         <Cancel />
                     </button>
                     {navLinkList.map((link) => (
-                        <Link key={link.path} to={link.path}>
+                        <Link
+                            onClick={() => setMenu(false)}
+                            key={link.path}
+                            to={link.path}
+                        >
                             {link.name}
                         </Link>
                     ))}
