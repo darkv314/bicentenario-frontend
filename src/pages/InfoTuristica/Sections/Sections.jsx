@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const Banner = () => {
+export const Sections = () => {
     return (
         <div>
             InfoTuristica

@@ -3,7 +3,7 @@ import Nav from "../Nav/Nav";
 import "./Layout.css";
 import { useState } from "react";
 import { navLinkList } from "../../Helpers/Helpers";
-import { Cancel } from "../../assets/icons/cancel";
+import { IconoirProvider, Cancel } from "iconoir-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Layout() {
@@ -12,14 +12,14 @@ function Layout() {
         <main className="App">
             <div
                 className="layout"
-                onClick={(e) => {
+                onClick={() => {
                     if (menu) setMenu(false);
                 }}
             >
                 <Nav setMenu={setMenu} />
                 <div className="content">
                     <AnimatePresence>
-                        {menu ? <Menu setMenu={setMenu} /> : null}
+                        {menu && <Menu setMenu={setMenu} />}
                     </AnimatePresence>
                     <Outlet />
                 </div>
@@ -54,7 +54,9 @@ function Menu({ setMenu }) {
                         className="nav-menu-button cancel-button"
                         onClick={() => setMenu(false)}
                     >
-                        <Cancel />
+                        <IconoirProvider>
+                            <Cancel />
+                        </IconoirProvider>
                     </button>
                     {navLinkList.map((link) => (
                         <Link

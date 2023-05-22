@@ -5,8 +5,8 @@ import BicentenarioLogoV from "../../assets/logos/bicV.png";
 import "./Nav.css";
 import { useWindowWidth } from "@react-hook/window-size";
 import { Link } from "react-router-dom";
-import { Menu } from "../../assets/icons/menu";
 import { navLinkList } from "../../Helpers/Helpers";
+import { IconoirProvider, Menu } from "iconoir-react";
 
 function Nav({ setMenu }) {
     const width = useWindowWidth();
@@ -39,7 +39,9 @@ function Nav({ setMenu }) {
                             setMenu((menu) => !menu);
                         }}
                     >
-                        <Menu className="menu-icon" />
+                        <IconoirProvider>
+                            <Menu />
+                        </IconoirProvider>
                     </button>
                 ) : (
                     navLinkList.map((link) => (

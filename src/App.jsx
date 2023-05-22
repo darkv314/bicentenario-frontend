@@ -1,6 +1,6 @@
 import Home from "./pages/Home/Home";
-import { Banner } from "./pages/InfoTuristica/Banner/Banner";
 import InfoTuristica from "./pages/InfoTuristica/InfoTuristica";
+import { Sections } from "./pages/InfoTuristica/Sections/Sections";
 import { Servicios } from "./pages/InfoTuristica/Servicios/Servicios";
 import Turismo from "./pages/InfoTuristica/Turismo/Turismo";
 import Layout from "./views/Layout/Layout";
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
                 children: [
                     {
                         index: true,
-                        element: <Banner />,
+                        element: <Sections />,
                     },
                     {
                         path: "servicios",
