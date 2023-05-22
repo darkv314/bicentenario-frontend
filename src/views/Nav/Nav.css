@@ -16,7 +16,13 @@
 
 .nav-img-container {
     display: grid;
-    place-items: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.nav-img-container a {
+    display: grid;
+    align-items: end;
 }
 
 .nav-img-container img {
@@ -51,7 +57,7 @@
 
 @media (max-width: 500px) {
     .nav-icons {
-        grid-template-columns: repeat(2, 2.75rem);
+        grid-template-columns: repeat(2, 1.75rem);
         gap: 1rem;
     }
 }

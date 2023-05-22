@@ -4,6 +4,7 @@ import "./Layout.css";
 import { useState } from "react";
 import { navLinkList } from "../../Helpers/Helpers";
 import { Cancel } from "../../assets/icons/cancel";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Layout() {
     const [menu, setMenu] = useState(false);
@@ -17,7 +18,9 @@ function Layout() {
             >
                 <div className="content">
                     <Nav setMenu={setMenu} />
-                    {menu ? <Menu setMenu={setMenu} /> : null}
+                    <AnimatePresence>
+                        {menu ? <Menu setMenu={setMenu} /> : null}
+                    </AnimatePresence>
                     <Outlet />
                 </div>
             </div>
@@ -28,26 +31,38 @@ function Layout() {
 export default Layout;
 
 function Menu({ setMenu }) {
+    const animation = {
+        hidden: { x: 125, opacity: 0 },
+        visible: { x: 0, opacity: 1 },
+        exit: { x: 125, opacity: 0 },
+    };
     return (
-        <div
-            onClick={(e) => {
-                e.stopPropagation();
-            }}
-            className="nav-menu"
-        >
-            <div className="nav-menu-link-container">
-                <button
-                    className="nav-menu-button cancel-button"
-                    onClick={() => setMenu(false)}
-                >
-                    <Cancel />
-                </button>
-                {navLinkList.map((link) => (
-                    <Link key={link.path} to={link.path}>
-                        {link.name}
-                    </Link>
-                ))}
-            </div>
+        <div className="background-menu">
+            <motion.div
+                variants={animation}
+                initial="hidden"
+                animate="visible"
+                transition={"0.45"}
+                exit="exit"
+                onClick={(e) => {
+                    e.stopPropagation();
+                }}
+                className="nav-menu"
+            >
+                <div className="nav-menu-link-container">
+                    <button
+                        className="nav-menu-button cancel-button"
+                        onClick={() => setMenu(false)}
+                    >
+                        <Cancel />
+                    </button>
+                    {navLinkList.map((link) => (
+                        <Link key={link.path} to={link.path}>
+                            {link.name}
+                        </Link>
+                    ))}
+                </div>
+            </motion.div>
         </div>
     );
 }
