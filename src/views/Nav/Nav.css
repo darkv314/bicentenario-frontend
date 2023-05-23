@@ -55,7 +55,7 @@
     background-color: transparent;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 525px) {
     .nav-icons {
         grid-template-columns: repeat(2, 1.75rem);
         gap: 1rem;

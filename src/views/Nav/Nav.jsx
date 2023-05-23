@@ -7,12 +7,21 @@ import { useWindowWidth } from "@react-hook/window-size";
 import { Link } from "react-router-dom";
 import { navLinkList } from "../../Helpers/Helpers";
 import { IconoirProvider, Menu } from "iconoir-react";
+import useNav from "../../hooks/useNav";
 
 function Nav({ setMenu }) {
     const width = useWindowWidth();
+    const navRef = useNav();
+    const navIconsStyle = {
+        gridTemplateColumns: "repeat(2, 1.75rem)",
+        gap: "1rem",
+    };
     return (
-        <nav className="bicentenario-nav">
-            <div className="nav-icons">
+        <nav className="bicentenario-nav" ref={navRef}>
+            <div
+                className="nav-icons"
+                style={width <= 520 ? navIconsStyle : null}
+            >
                 <NavImg
                     alt={"Logo GAMS"}
                     hsrc={GamsLogoH}
@@ -62,7 +71,7 @@ function NavImg({ hsrc, vsrc, imgClass, alt, width, to }) {
     return (
         <div className={imgClass}>
             <Link to={to}>
-                <img src={width <= 500 ? vsrc : hsrc} alt={alt} />
+                <img src={width <= 520 ? vsrc : hsrc} alt={alt} />
             </Link>
         </div>
     );
