@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import { Banner } from "../../views/VideoBanner/VideoBanner";
 import TimeLine from "../../views/TimeLine/TimeLine";
 import "./Home.css";
-import useNav from "../../hooks/useNav";
-import { useWindowWidth } from "@react-hook/window-size";
+import Sucre from "../../assets/timelineImages/sucre1.jpg";
 
 function Home() {
     return (
@@ -20,13 +19,18 @@ export default Home;
 function Vision() {
     return (
         <div className="vision">
-            <h1>Nuestra vision</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
-                eaque! Dicta expedita nihil magni alias inventore deleniti
-                itaque voluptatem eos modi repellat? A quos aperiam
-                exercitationem quo impedit commodi culpa.
-            </p>
+            <div className="vision-content">
+                <h2>Nuestra vision</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iste, eaque! Dicta expedita nihil magni alias inventore
+                    deleniti itaque voluptatem eos modi repellat? A quos aperiam
+                    exercitationem quo impedit commodi culpa.
+                </p>
+            </div>
+            <div className="vision-img">
+                <img src={Sucre} alt="" />
+            </div>
         </div>
     );
 }

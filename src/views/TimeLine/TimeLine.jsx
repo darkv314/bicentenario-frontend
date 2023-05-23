@@ -26,16 +26,19 @@ function TimeLine() {
                         icon={<Book />}
                         content={"Hola"}
                         title={"Titulo"}
+                        image={Sucre1}
                     />
                     <TimeLineItem
                         icon={<Book />}
                         content={"Hola"}
                         title={"Titulo"}
+                        image={Sucre1}
                     />
                     <TimeLineItem
                         icon={<Book />}
                         content={"Hola"}
                         title={"Titulo"}
+                        image={Sucre1}
                     />
                 </Timeline>
             </AnimatePresence>
