@@ -1,0 +1,62 @@
+.infoTuristica {
+    display: grid;
+    gap: 1rem;
+    padding: 2rem;
+    grid-template-rows: 1fr 1fr;
+}
+
+.sectionBanner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.sectionBanner-content {
+    display: grid;
+    align-self: center;
+    gap: 1rem;
+}
+
+.sectionBanner-content p {
+    text-align: justify;
+}
+
+.sectionBanner-content a {
+    justify-self: start;
+}
+
+.sectionBanner-content button {
+    justify-self: start;
+    padding: 0.7rem;
+    border-radius: 1rem 0.5rem;
+    border: 1px solid #858585;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.sectionBanner-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4rem 0.75rem;
+}
+
+.left {
+    grid-row: 1;
+}
+
+@media (max-width: 675px) {
+    .sectionBanner {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        gap: 0.5rem;
+    }
+
+    .sectionBanner-content {
+        align-self: center;
+    }
+
+    .right {
+        grid-row: 1;
+    }
+}

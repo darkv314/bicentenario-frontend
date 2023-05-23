@@ -18,18 +18,18 @@
     display: grid;
     gap: 1rem;
     align-self: center;
-    padding: 3rem;
+    padding: 3rem 1rem;
 }
 
 .vision-img {
-    border-radius: 1rem;
+    border-radius: 0.7rem;
 }
 
 .vision-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 1rem;
+    border-radius: 0.7rem;
 }
 
 @media (max-width: 750px) {
@@ -39,6 +39,12 @@
     }
 
     .vision-img {
-        padding: 0 3rem;
+        grid-row: 1;
+        padding: 0.5rem;
+    }
+
+    .vision-content {
+        grid-row: 2;
+        padding: 0.5rem;
     }
 }
