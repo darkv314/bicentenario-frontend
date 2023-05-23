@@ -8,7 +8,7 @@ export const navLinkList = [
         name: "Turismo",
     },
     {
-        path: "/formacion",
+        path: "https://inextensosrl.com/cursosgams",
         name: "Formación",
     },
 ];
