@@ -1,0 +1,38 @@
+.section {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.section-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14.375rem, 1fr));
+    gap: 1rem;
+}
+
+.itemSection {
+    display: grid;
+    grid-template-rows: 17.5rem auto;
+    flex-direction: column;
+    background-color: rgb(91, 91, 91);
+    border-radius: 0.7rem;
+    /* padding: 0.7rem; */
+    gap: 0.7rem;
+}
+
+.itemSection-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.7rem 0.7rem 0 0;
+}
+
+.itemSection-content {
+    display: grid;
+    gap: 0.5rem;
+    padding: 0 0.7rem 0.7rem 0.7rem;
+}
+
+/* .itemSection-content p {
+    text-align: justify;
+} */

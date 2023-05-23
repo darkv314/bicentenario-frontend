@@ -1,0 +1,12 @@
+.linkButton {
+    border-radius: 0.3rem;
+    border: 1px solid #858585;
+    padding: 0.6rem;
+    justify-self: start;
+    cursor: pointer;
+}
+
+.linkButton a {
+    text-decoration: none;
+    color: black;
+}

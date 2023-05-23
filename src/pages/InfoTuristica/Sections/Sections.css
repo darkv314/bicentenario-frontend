@@ -1,7 +1,7 @@
 .infoTuristica {
     display: grid;
-    gap: 1rem;
-    padding: 2rem;
+    gap: 2rem;
+    padding: 1rem;
     grid-template-rows: 1fr 1fr;
 }
 
