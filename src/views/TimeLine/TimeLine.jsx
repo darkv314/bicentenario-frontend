@@ -10,37 +10,31 @@ import "./TimeLine.css";
 import { IconoirProvider, Book } from "iconoir-react";
 import { useState } from "react";
 import Sucre1 from "../../assets/timelineImages/sucre1.jpg";
+import { timelineItems } from "./Data/Data";
+import { ThemeProvider, createTheme } from "@mui/material";
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: "#008ED5",
+        },
+        secondary: {
+            main: "#f50057",
+        },
+    },
+});
 
 function TimeLine() {
     return (
         <div className="timeline">
             <AnimatePresence>
-                <Timeline position="alternate">
-                    <TimeLineItem
-                        icon={<Book />}
-                        content={"Hola"}
-                        title={"Titulo"}
-                        image={Sucre1}
-                    />
-                    <TimeLineItem
-                        icon={<Book />}
-                        content={"Hola"}
-                        title={"Titulo"}
-                        image={Sucre1}
-                    />
-                    <TimeLineItem
-                        icon={<Book />}
-                        content={"Hola"}
-                        title={"Titulo"}
-                        image={Sucre1}
-                    />
-                    <TimeLineItem
-                        icon={<Book />}
-                        content={"Hola"}
-                        title={"Titulo"}
-                        image={Sucre1}
-                    />
-                </Timeline>
+                <ThemeProvider theme={theme}>
+                    <Timeline position="alternate">
+                        {timelineItems.map((item) => (
+                            <TimeLineItem key={item.id} {...item} />
+                        ))}
+                    </Timeline>
+                </ThemeProvider>
             </AnimatePresence>
         </div>
     );
@@ -48,7 +42,7 @@ function TimeLine() {
 
 export default TimeLine;
 
-function TimeLineItem({ icon, image, content, title }) {
+function TimeLineItem({ icon, image, content, title, bgcolor }) {
     const [isClicked, setIsClicked] = useState(false);
 
     const animation = {
@@ -99,36 +93,55 @@ function TimeLineItem({ icon, image, content, title }) {
                         backgroundColor: "transparent",
                     }}
                 >
-                    <TimelineDot>
-                        <IconoirProvider
+                    <TimelineDot
+                        sx={{
+                            display: "grid",
+                            placeItems: "center",
+                            pt: "0.5rem",
+                            bgcolor: bgcolor,
+                        }}
+                    >
+                        {icon}
+                        {/* <IconoirProvider
                             iconProps={{
                                 width: "1.5rem",
                                 height: "1.5rem",
                             }}
                         >
                             {icon}
-                        </IconoirProvider>
+                        </IconoirProvider> */}
                     </TimelineDot>
                 </motion.button>
 
                 <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent sx={{ py: "2rem", px: 2 }}>
-                <h3
-                    style={{
-                        fontFamily: `"Poppins", sans-serif`,
-                    }}
-                >
-                    {title}
-                </h3>
-                <p
-                    style={{
-                        fontFamily: `"Poppins", sans-serif`,
-                        fontSize: "0.75rem",
-                    }}
-                >
-                    {content}
-                </p>
+            <TimelineContent
+                sx={{
+                    py: "2rem",
+                    px: 2,
+                    display: "grid",
+                    alignItems: "center",
+                }}
+            >
+                <span>
+                    <h3
+                        style={{
+                            fontFamily: `"Agency FB", sans-serif`,
+                        }}
+                    >
+                        {title}
+                    </h3>
+                    {/* {content.map} */}
+                    <p
+                        style={{
+                            alignSelf: "center",
+                            fontFamily: `"Poppins", sans-serif`,
+                            fontSize: "0.75rem",
+                        }}
+                    >
+                        {content}
+                    </p>
+                </span>
             </TimelineContent>
         </TimelineItem>
     );

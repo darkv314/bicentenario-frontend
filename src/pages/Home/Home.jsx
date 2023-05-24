@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Banner } from "../../views/VideoBanner/VideoBanner";
 import TimeLine from "../../views/TimeLine/TimeLine";
 import "./Home.css";
-import Sucre from "../../assets/timelineImages/sucre1.jpg";
+import About from "../../assets/homeImages/about.jpg";
 
 function Home() {
     return (
@@ -20,16 +20,18 @@ function Vision() {
     return (
         <div className="vision">
             <div className="vision-content">
-                <h2>Nuestra vision</h2>
+                <h2 style={{ fontFamily: `"Agency FB", sans-serif` }}>
+                    Sucre, sede del Bicentenario
+                </h2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Iste, eaque! Dicta expedita nihil magni alias inventore
-                    deleniti itaque voluptatem eos modi repellat? A quos aperiam
-                    exercitationem quo impedit commodi culpa.
+                    El Bicentenario del advenimiento de Bolivia, actual Estado
+                    Plurinacional, debe entenderse como la oportunidad para
+                    lograr un espacio de inserción de nuestra ciudad en el
+                    ámbito mundial, con una mirada renovada.
                 </p>
             </div>
             <div className="vision-img">
-                <img src={Sucre} alt="" />
+                <img src={About} alt="" />
             </div>
         </div>
     );
