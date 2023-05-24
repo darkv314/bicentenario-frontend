@@ -8,10 +8,13 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import { AnimatePresence, motion } from "framer-motion";
 import "./TimeLine.css";
 import { IconoirProvider, Book } from "iconoir-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { timelineItems } from "./Data/Data";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { useWindowWidth } from "@react-hook/window-size";
+import useInfoCard from "../../hooks/useInfoCard";
+import { set } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
 
 const theme = createTheme({
     palette: {
@@ -43,16 +46,19 @@ function TimeLine() {
 export default TimeLine;
 
 function TimeLineItem({ icon, image, content, title, bgcolor }) {
-    const [isClicked, setIsClicked] = useState(false);
+    const navigate = useNavigate();
     const windowWidth = useWindowWidth();
     const animation = {
         hidden: { x: 15, opacity: 0 },
         visible: { x: 0, opacity: 1 },
         exit: { x: 15, opacity: 0 },
     };
-
+    const { setInfoCard } = useInfoCard();
     function handleClick() {
-        setIsClicked(!isClicked);
+        if (windowWidth <= 500) {
+            setInfoCard({ title, content, image, clicked: true });
+            navigate(`/${title.toLowerCase()}`);
+        }
     }
 
     return (
@@ -78,28 +84,36 @@ function TimeLineItem({ icon, image, content, title, bgcolor }) {
 
             <TimelineSeparator>
                 <TimelineConnector />
-                <motion.button
-                    onClick={handleClick}
-                    type="button"
-                    whileHover={{ scale: 1.3 }}
-                    whileTap={{ scale: 0.9 }}
-                    style={{
-                        display: "grid",
-                        placeItems: "center",
-                        border: "none",
-                        backgroundColor: "transparent",
-                    }}
-                >
-                    <TimelineDot
-                        sx={{
+                <Link to={`${title.replace(/\s/g, "").toLowerCase()}`}>
+                    <motion.button
+                        onClick={() =>
+                            setInfoCard({
+                                title,
+                                content,
+                                image,
+                                clicked: true,
+                            })
+                        }
+                        type="button"
+                        whileHover={{ scale: 1.3 }}
+                        whileTap={{ scale: 0.9 }}
+                        style={{
                             display: "grid",
                             placeItems: "center",
-                            pt: "0.5rem",
-                            bgcolor: bgcolor,
+                            border: "none",
+                            backgroundColor: "transparent",
                         }}
                     >
-                        {icon}
-                        {/* <IconoirProvider
+                        <TimelineDot
+                            sx={{
+                                display: "grid",
+                                placeItems: "center",
+                                pt: "0.5rem",
+                                bgcolor: bgcolor,
+                            }}
+                        >
+                            {icon}
+                            {/* <IconoirProvider
                             iconProps={{
                                 width: "1.5rem",
                                 height: "1.5rem",
@@ -107,9 +121,9 @@ function TimeLineItem({ icon, image, content, title, bgcolor }) {
                         >
                             {icon}
                         </IconoirProvider> */}
-                    </TimelineDot>
-                </motion.button>
-
+                        </TimelineDot>
+                    </motion.button>
+                </Link>
                 <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent
@@ -140,21 +154,5 @@ function TimeLineItem({ icon, image, content, title, bgcolor }) {
                 )} */}
             </TimelineContent>
         </TimelineItem>
-    );
-}
-
-function InfoCard({ title, content, image }) {
-    return (
-        <div className="infoCard">
-            <div className="infoCard-img">
-                <img src={image} alt="" />
-                <div className="infoCard-title">
-                    <h2>{title}</h2>
-                </div>
-            </div>
-            <div className="infoCard-content">
-                <p>{content}</p>
-            </div>
-        </div>
     );
 }

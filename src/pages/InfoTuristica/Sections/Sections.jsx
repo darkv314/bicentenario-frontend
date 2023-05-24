@@ -20,8 +20,8 @@ function SectionBanner({ title, description, image, to, place }) {
         <div className="sectionBanner">
             <div className={`sectionBanner-content`}>
                 <h2>{title}</h2>
-                {description.map((paragraph) => (
-                    <p>{paragraph}</p>
+                {description.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
                 ))}
                 <Link to={to}>
                     <motion.button

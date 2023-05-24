@@ -54,7 +54,11 @@ function Menu({ setMenu }) {
                         className="nav-menu-button cancel-button"
                         onClick={() => setMenu(false)}
                     >
-                        <IconoirProvider>
+                        <IconoirProvider
+                            iconProps={{
+                                color: "#fff",
+                            }}
+                        >
                             <Cancel />
                         </IconoirProvider>
                     </button>
