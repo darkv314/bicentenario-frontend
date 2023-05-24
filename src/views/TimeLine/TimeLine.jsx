@@ -9,9 +9,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import "./TimeLine.css";
 import { IconoirProvider, Book } from "iconoir-react";
 import { useState } from "react";
-import Sucre1 from "../../assets/timelineImages/sucre1.jpg";
 import { timelineItems } from "./Data/Data";
 import { ThemeProvider, createTheme } from "@mui/material";
+import { useWindowWidth } from "@react-hook/window-size";
 
 const theme = createTheme({
     palette: {
@@ -44,7 +44,7 @@ export default TimeLine;
 
 function TimeLineItem({ icon, image, content, title, bgcolor }) {
     const [isClicked, setIsClicked] = useState(false);
-
+    const windowWidth = useWindowWidth();
     const animation = {
         hidden: { x: 15, opacity: 0 },
         visible: { x: 0, opacity: 1 },
@@ -52,7 +52,6 @@ function TimeLineItem({ icon, image, content, title, bgcolor }) {
     };
 
     function handleClick() {
-        console.log("click");
         setIsClicked(!isClicked);
     }
 
@@ -64,18 +63,16 @@ function TimeLineItem({ icon, image, content, title, bgcolor }) {
                 variant="body2"
             >
                 <AnimatePresence>
-                    {isClicked && image && (
-                        <motion.div
-                            variants={animation}
-                            initial="hidden"
-                            animate="visible"
-                            transition={"1"}
-                            exit="exit"
-                            className="timeline-image"
-                        >
-                            <img src={image} alt="" />
-                        </motion.div>
-                    )}
+                    <motion.div
+                        variants={animation}
+                        initial="hidden"
+                        animate="visible"
+                        transition={"1"}
+                        exit="exit"
+                        className="timeline-image"
+                    >
+                        <img src={image} alt="" />
+                    </motion.div>
                 </AnimatePresence>
             </TimelineOppositeContent>
 
@@ -123,27 +120,41 @@ function TimeLineItem({ icon, image, content, title, bgcolor }) {
                     alignItems: "center",
                 }}
             >
-                <span>
-                    <h3
-                        style={{
-                            fontFamily: `"Agency FB", sans-serif`,
-                        }}
-                    >
-                        {title}
-                    </h3>
-                    {content.map((item) => (
-                        <p
-                            style={{
-                                alignSelf: "center",
-                                fontFamily: `"Poppins", sans-serif`,
-                                fontSize: "0.75rem",
-                            }}
-                        >
-                            {item}
-                        </p>
-                    ))}
+                <span className="timeline-content">
+                    <h3>{title}</h3>
+                    {windowWidth > 500 &&
+                        content.map((item, index) => (
+                            <p
+                                key={index}
+                                style={{
+                                    alignSelf: "center",
+                                    fontFamily: `"Poppins", sans-serif`,
+                                }}
+                            >
+                                {item}
+                            </p>
+                        ))}
                 </span>
+                {/* {isClicked && (
+                    <InfoCard content={content} image={image} title={title} />
+                )} */}
             </TimelineContent>
         </TimelineItem>
+    );
+}
+
+function InfoCard({ title, content, image }) {
+    return (
+        <div className="infoCard">
+            <div className="infoCard-img">
+                <img src={image} alt="" />
+                <div className="infoCard-title">
+                    <h2>{title}</h2>
+                </div>
+            </div>
+            <div className="infoCard-content">
+                <p>{content}</p>
+            </div>
+        </div>
     );
 }
