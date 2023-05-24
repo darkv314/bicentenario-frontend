@@ -8,7 +8,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: white;
+    background-color: #d42d1f;
 }
 
 .nav-icons {
@@ -40,9 +40,11 @@
 }
 
 .nav-links a {
+    font-family: "Agency FB", sans-serif;
     font-weight: 500;
     text-decoration: none;
-    color: #000;
+    color: #fff;
+    font-weight: bold;
 }
 
 .nav-links a:hover {

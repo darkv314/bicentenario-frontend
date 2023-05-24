@@ -2,6 +2,9 @@ import GamsLogoH from "../../assets/logos/gamsH.png";
 import BicentenarioLogoH from "../../assets/logos/bicH.png";
 import GamsLogoV from "../../assets/logos/gamsV.png";
 import BicentenarioLogoV from "../../assets/logos/bicV.png";
+import GamsLogoHWhite from "../../assets/logos/gamsHB.png";
+import BicentenarioLogoHWhite from "../../assets/logos/bicHB.png";
+
 import "./Nav.css";
 import { useWindowWidth } from "@react-hook/window-size";
 import { Link } from "react-router-dom";
@@ -24,7 +27,7 @@ function Nav({ setMenu }) {
             >
                 <NavImg
                     alt={"Logo GAMS"}
-                    hsrc={GamsLogoH}
+                    hsrc={GamsLogoHWhite}
                     vsrc={GamsLogoV}
                     imgClass={"nav-img-container"}
                     width={width}
@@ -32,7 +35,7 @@ function Nav({ setMenu }) {
                 />
                 <NavImg
                     alt={"Logo Bicentenario"}
-                    hsrc={BicentenarioLogoH}
+                    hsrc={BicentenarioLogoHWhite}
                     vsrc={BicentenarioLogoV}
                     imgClass={"nav-img-container"}
                     width={width}

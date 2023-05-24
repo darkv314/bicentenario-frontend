@@ -6,6 +6,8 @@
 .layout {
     display: grid;
     grid-template-rows: auto 1fr;
+    background-color: #391e4a;
+    color: white;
 }
 
 .content {
