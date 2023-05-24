@@ -1,12 +1,12 @@
 .home {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .vision {
     display: grid;
-    padding: 1rem;
+    padding: 1rem 2rem;
     text-align: justify;
     gap: 1rem;
     grid-template-columns: 1fr 1fr;
@@ -23,6 +23,7 @@
 
 .vision-img {
     border-radius: 0.7rem;
+    max-height: 22.5rem;
 }
 
 .vision-img img {

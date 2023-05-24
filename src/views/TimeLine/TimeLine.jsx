@@ -131,16 +131,17 @@ function TimeLineItem({ icon, image, content, title, bgcolor }) {
                     >
                         {title}
                     </h3>
-                    {/* {content.map} */}
-                    <p
-                        style={{
-                            alignSelf: "center",
-                            fontFamily: `"Poppins", sans-serif`,
-                            fontSize: "0.75rem",
-                        }}
-                    >
-                        {content}
-                    </p>
+                    {content.map((item) => (
+                        <p
+                            style={{
+                                alignSelf: "center",
+                                fontFamily: `"Poppins", sans-serif`,
+                                fontSize: "0.75rem",
+                            }}
+                        >
+                            {item}
+                        </p>
+                    ))}
                 </span>
             </TimelineContent>
         </TimelineItem>

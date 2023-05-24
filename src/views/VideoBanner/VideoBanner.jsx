@@ -1,4 +1,4 @@
-import BannerVideo from "../../assets/video/banner.webm";
+import VideoBanner from "../../assets/video/videoBanner.webm";
 import "./VideoBanner.css";
 import { useWindowWidth } from "@react-hook/window-size";
 import useNav from "../../hooks/useNav";
@@ -12,7 +12,7 @@ export const Banner = () => {
     };
     return (
         <div className="banner" style={style}>
-            <video src={BannerVideo} autoPlay muted loop></video>
+            <video src={VideoBanner} autoPlay muted loop></video>
             <div className="banner-content">
                 <h1>Bicentenario</h1>
             </div>
