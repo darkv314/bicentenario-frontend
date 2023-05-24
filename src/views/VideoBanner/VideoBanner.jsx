@@ -3,6 +3,7 @@ import "./VideoBanner.css";
 import { useWindowWidth } from "@react-hook/window-size";
 import useNav from "../../hooks/useNav";
 import LogoBlanco from "../../assets/logos/bicVB.png";
+import { useEffect, useState } from "react";
 
 export const Banner = () => {
     const navRef = useNav();
@@ -10,6 +11,10 @@ export const Banner = () => {
     const style = {
         height: `calc(100svh - ${navHeight}px)`,
     };
+    const [state, setState] = useState(false);
+    useEffect(() => {
+        state ? null : setState(true);
+    }, []);
     return (
         <div className="banner" style={style}>
             <video src={VideoBanner} autoPlay muted loop></video>

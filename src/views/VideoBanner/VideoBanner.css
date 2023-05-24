@@ -34,8 +34,14 @@
     object-fit: cover;
 }
 
-@media (max-width: 525px) {
+@media (max-width: 800px) {
     .banner-img img {
         width: 70%;
+    }
+}
+
+@media (max-width: 525px) {
+    .banner-img img {
+        width: 90%;
     }
 }
