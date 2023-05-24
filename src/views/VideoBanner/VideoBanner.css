@@ -22,3 +22,14 @@
     background-color: rgba(0, 0, 0, 0.453);
     color: whitesmoke;
 }
+
+.banner-img {
+    display: grid;
+    place-items: center;
+}
+
+.banner-img img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+}

@@ -14,7 +14,7 @@ import { ThemeProvider, createTheme } from "@mui/material";
 import { useWindowWidth } from "@react-hook/window-size";
 import useInfoCard from "../../hooks/useInfoCard";
 import { set } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme({
     palette: {
@@ -84,36 +84,28 @@ function TimeLineItem({ icon, image, content, title, bgcolor }) {
 
             <TimelineSeparator>
                 <TimelineConnector />
-                <Link to={`${title.replace(/\s/g, "").toLowerCase()}`}>
-                    <motion.button
-                        onClick={() =>
-                            setInfoCard({
-                                title,
-                                content,
-                                image,
-                                clicked: true,
-                            })
-                        }
-                        type="button"
-                        whileHover={{ scale: 1.3 }}
-                        whileTap={{ scale: 0.9 }}
-                        style={{
+                <motion.button
+                    onClick={handleClick}
+                    type="button"
+                    whileHover={{ scale: 1.3 }}
+                    whileTap={{ scale: 0.9 }}
+                    style={{
+                        display: "grid",
+                        placeItems: "center",
+                        border: "none",
+                        backgroundColor: "transparent",
+                    }}
+                >
+                    <TimelineDot
+                        sx={{
                             display: "grid",
                             placeItems: "center",
-                            border: "none",
-                            backgroundColor: "transparent",
+                            pt: "0.5rem",
+                            bgcolor: bgcolor,
                         }}
                     >
-                        <TimelineDot
-                            sx={{
-                                display: "grid",
-                                placeItems: "center",
-                                pt: "0.5rem",
-                                bgcolor: bgcolor,
-                            }}
-                        >
-                            {icon}
-                            {/* <IconoirProvider
+                        {icon}
+                        {/* <IconoirProvider
                             iconProps={{
                                 width: "1.5rem",
                                 height: "1.5rem",
@@ -121,9 +113,9 @@ function TimeLineItem({ icon, image, content, title, bgcolor }) {
                         >
                             {icon}
                         </IconoirProvider> */}
-                        </TimelineDot>
-                    </motion.button>
-                </Link>
+                    </TimelineDot>
+                </motion.button>
+
                 <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent

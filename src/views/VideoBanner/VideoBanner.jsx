@@ -2,6 +2,7 @@ import VideoBanner from "../../assets/video/videoBanner.webm";
 import "./VideoBanner.css";
 import { useWindowWidth } from "@react-hook/window-size";
 import useNav from "../../hooks/useNav";
+import LogoBlanco from "../../assets/logos/bicVB.png";
 
 export const Banner = () => {
     const navRef = useNav();
@@ -13,7 +14,9 @@ export const Banner = () => {
         <div className="banner" style={style}>
             <video src={VideoBanner} autoPlay muted loop></video>
             <div className="banner-content">
-                <h1>Bicentenario</h1>
+                <div className="banner-img">
+                    <img src={LogoBlanco} alt="" />
+                </div>
             </div>
         </div>
     );
