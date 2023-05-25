@@ -2,14 +2,14 @@ import Hot1 from "../../../../assets/timelineImages/Hoteleria/hot1.jpg";
 import Hot2 from "../../../../assets/timelineImages/Hoteleria/hot2.jpg";
 import Hot3 from "../../../../assets/timelineImages/Hoteleria/hot3.jpg";
 import Hot4 from "../../../../assets/timelineImages/Hoteleria/hot4.jpeg";
-import Res1 from "../../../../assets/timelineImages/Gastronomia/res1.jpg";
-import Res2 from "../../../../assets/timelineImages/Gastronomia/res2.jpg";
-import Res3 from "../../../../assets/timelineImages/Gastronomia/res3.jpg";
-import Res4 from "../../../../assets/timelineImages/Gastronomia/res4.jpeg";
-import En1 from "../../../../assets/timelineImages/Entretenimiento/en1.jpg";
-import En2 from "../../../../assets/timelineImages/Entretenimiento/en2.jpg";
-import En3 from "../../../../assets/timelineImages/Entretenimiento/en3.jpg";
-import En4 from "../../../../assets/timelineImages/Entretenimiento/en4.jpeg";
+import Res1 from "../../../../assets/timelineImages/Gastronomia/Res1.jpg";
+import Res2 from "../../../../assets/timelineImages/Gastronomia/Res2.jpg";
+import Res3 from "../../../../assets/timelineImages/Gastronomia/Res3.jpg";
+import Res4 from "../../../../assets/timelineImages/Gastronomia/Res4.jpeg";
+import En1 from "../../../../assets/timelineImages/Entretenimiento/En1.jpg";
+import En2 from "../../../../assets/timelineImages/Entretenimiento/En2.jpg";
+import En3 from "../../../../assets/timelineImages/Entretenimiento/En3.jpg";
+import En4 from "../../../../assets/timelineImages/Entretenimiento/En4.jpeg";
 
 export const ServiciosList = [
     {
