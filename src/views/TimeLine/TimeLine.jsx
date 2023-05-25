@@ -7,13 +7,10 @@ import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import { AnimatePresence, motion } from "framer-motion";
 import "./TimeLine.css";
-import { IconoirProvider, Book } from "iconoir-react";
-import { useEffect, useState } from "react";
 import { timelineItems } from "./Data/Data";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { useWindowWidth } from "@react-hook/window-size";
 import useInfoCard from "../../hooks/useInfoCard";
-import { set } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const theme = createTheme({
@@ -45,7 +42,7 @@ function TimeLine() {
 
 export default TimeLine;
 
-function TimeLineItem({ icon, image, content, title, bgcolor }) {
+function TimeLineItem({ icon, image, content, title, bgcolor, doc }) {
     const navigate = useNavigate();
     const windowWidth = useWindowWidth();
     const animation = {
@@ -57,8 +54,12 @@ function TimeLineItem({ icon, image, content, title, bgcolor }) {
     function handleClick() {
         if (windowWidth <= 500) {
             setInfoCard({ title, content, image, clicked: true });
-            navigate(`/${title.toLowerCase()}`);
+            navigate(`/${title.replace(/\s/g, "").toLowerCase()}`);
         }
+    }
+
+    function handleImgClick() {
+        window.open(doc);
     }
 
     return (
@@ -69,16 +70,19 @@ function TimeLineItem({ icon, image, content, title, bgcolor }) {
                 variant="body2"
             >
                 <AnimatePresence>
-                    <motion.div
+                    <motion.button
+                        type="button"
+                        onClick={handleImgClick}
                         variants={animation}
                         initial="hidden"
                         animate="visible"
                         transition={"1"}
                         exit="exit"
                         className="timeline-image"
+                        tabIndex={0}
                     >
                         <img src={image} alt="" />
-                    </motion.div>
+                    </motion.button>
                 </AnimatePresence>
             </TimelineOppositeContent>
 

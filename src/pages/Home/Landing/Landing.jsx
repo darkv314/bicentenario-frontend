@@ -1,6 +1,8 @@
 import { Banner } from "../../../views/VideoBanner/VideoBanner";
 import TimeLine from "../../../views/TimeLine/TimeLine";
 import About from "../../../assets/homeImages/about.jpg";
+import portada from "../../../assets/logos/portada.jpg";
+import libro from "../../../assets/docs/ElHorizontedelBicentenario2023.pdf";
 
 export const Landing = () => {
     return (
@@ -8,6 +10,7 @@ export const Landing = () => {
             <Banner />
             <Vision />
             <TimeLine />
+            <BookBanner />
         </div>
     );
 };
@@ -28,6 +31,24 @@ function Vision() {
             </div>
             <div className="vision-img">
                 <img src={About} alt="" />
+            </div>
+        </div>
+    );
+}
+
+function BookBanner() {
+    const handleClick = () => {
+        window.open(libro);
+    };
+    return (
+        <div className="bookBanner">
+            <div className="bookBanner-img">
+                <img src={portada} alt="" />
+            </div>
+            <div className="bookBanner-content">
+                <h2>El Horizonte del Bicentenario</h2>
+                <p>Descarga el libro en formato pdf y de forma gratuita</p>
+                <button onClick={handleClick}>Mira el libro aquí</button>
             </div>
         </div>
     );

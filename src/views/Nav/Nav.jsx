@@ -4,6 +4,7 @@ import GamsLogoV from "../../assets/logos/gamsV.png";
 import BicentenarioLogoV from "../../assets/logos/bicV.png";
 import GamsLogoHWhite from "../../assets/logos/gamsHB.png";
 import BicentenarioLogoHWhite from "../../assets/logos/bicHB.png";
+import NavLogosH from "../../assets/logos/navLogosH.png";
 
 import "./Nav.css";
 import { useWindowWidth } from "@react-hook/window-size";
@@ -21,22 +22,11 @@ function Nav({ setMenu }) {
     };
     return (
         <nav className="bicentenario-nav" ref={navRef}>
-            <div
-                className="nav-icons"
-                style={width <= 520 ? navIconsStyle : null}
-            >
-                <NavImg
-                    alt={"Logo GAMS"}
-                    hsrc={GamsLogoHWhite}
-                    vsrc={GamsLogoV}
-                    imgClass={"nav-img-container"}
-                    width={width}
-                    to={"/"}
-                />
+            <div className="nav-icons">
                 <NavImg
                     alt={"Logo Bicentenario"}
-                    hsrc={BicentenarioLogoHWhite}
-                    vsrc={BicentenarioLogoV}
+                    hsrc={NavLogosH}
+                    vsrc={GamsLogoV}
                     imgClass={"nav-img-container"}
                     width={width}
                     to={"/"}
@@ -51,7 +41,11 @@ function Nav({ setMenu }) {
                             setMenu((menu) => !menu);
                         }}
                     >
-                        <IconoirProvider>
+                        <IconoirProvider
+                            iconProps={{
+                                color: "#fff",
+                            }}
+                        >
                             <Menu />
                         </IconoirProvider>
                     </button>
@@ -74,7 +68,7 @@ function NavImg({ hsrc, vsrc, imgClass, alt, width, to }) {
     return (
         <div className={imgClass}>
             <Link to={to}>
-                <img src={width <= 520 ? vsrc : hsrc} alt={alt} />
+                <img src={hsrc} />
             </Link>
         </div>
     );

@@ -5,6 +5,13 @@ import Img4 from "../../../assets/timelineImages/Img4.jpg";
 import Img5 from "../../../assets/timelineImages/Img5.jpg";
 import Img6 from "../../../assets/timelineImages/Img6.jpg";
 import Img7 from "../../../assets/timelineImages/Img7.jpg";
+import Doc1 from "../../../assets/docs/Cartilla1LosYamparas.pdf";
+import Doc2 from "../../../assets/docs/Cartilla2LaFundacion.pdf";
+import Doc3 from "../../../assets/docs/Cartilla3CiudadUniversitaria.pdf";
+import Doc4 from "../../../assets/docs/Cartilla4Sublevacionesindígenas.pdf";
+import Doc5 from "../../../assets/docs/Cartilla5Revolución25demayo.pdf";
+import Doc6 from "../../../assets/docs/Cartilla6LasRepubliquetas.pdf";
+import Doc7 from "../../../assets/docs/Cartilla7AsambleaConstituyenteBicentenario.pdf";
 import { Pajarito } from "../../../assets/icons/pajarito";
 
 export const timelineItems = [
@@ -18,17 +25,19 @@ export const timelineItems = [
         icon: <Pajarito />,
         image: Img1,
         bgcolor: "#870950",
+        doc: Doc1,
     },
     {
         id: 2,
         title: "La fundación",
         content: [
-            "En 1538, los Pizarro, necesitados de tierras con las cuales satisfacer las demandas de sus leales, así como asegurar la lealtad de los almagristas vencidos, enviaron a sus capitanes a nuevas conquistas.",
-            "Al llegar a sus tierras los hermanos Pizarro, las siete naciones les hicieron la guerra pero acabaron derrotados. El cacique Cuysara señor principal de los Charcas decidió someterse, declarando tal intención ante Hernán Pizarro en el pueblo de Auquimarca. Más tarde siguieron el ejemplo las naciones restantes y todo el territorio quedó pacificado. Los españoles le dieron el nombre genérico de Provincia de Charcas.",
+            "Pasando el río Pilcomayo los españoles ingresaron en tierras de los yampara. Su cacique principal Aymoro salió a su encuentro logrando un pacto con los mismos, consiguiendo ventajas para su linaje y población como ser la propiedad de sus extensas tierras, tributos y exención posterior del trabajo de la mita en las minas de Potosí.",
+            "Con las informaciones llevadas al Cuzco por sus hermanos sobre el pacto con los yamparas, así como la riqueza argentífera de Porco, Francisco Pizarro vio la conveniencia de establecer en el Collasuyo un poblado hispano en Chuquisaca. Eligió para el cometido al capitán Pedro Anzúrez de Campo Redondo llamado Peránzures, quien cumpliría esta misión el 16 de abril de 1540.",
         ],
         icon: <Pajarito />,
         image: Img2,
         bgcolor: "#057084",
+        doc: Doc2,
     },
     {
         id: 3,
@@ -40,6 +49,7 @@ export const timelineItems = [
         icon: <Pajarito />,
         image: Img3,
         bgcolor: "#0A0516",
+        doc: Doc3,
     },
     {
         id: 4,
@@ -51,16 +61,18 @@ export const timelineItems = [
         icon: <Pajarito />,
         image: Img4,
         bgcolor: "#A5084A",
+        doc: Doc4,
     },
     {
         id: 5,
         title: "Revolución del 25 de Mayo de 1809",
         content: [
-            "Son numerosos los antecedentes que determinaron los hechos del 25 de Mayo de 1809 en Chuquisaca. Entre los más importantes se pueden señalar: las reformas borbónicas y la invasión napoleónica a España, así como los constantes conflictos entre autoridades en la Plata, hechos que fueron alentando, conjuntamente la influencia de pensadores de la ilustración, un caldo de cultivo para lo que sería los hechos que acaecerían en lo que conocemos como el “primer grito libertario de América.",
+            "Son numerosos los antecedentes que determinaron los hechos del 25 de Mayo de 1809 en Chuquisaca. Entre los más importantes se pueden señalar: las reformas borbónicas y la invasión napoleónica a España, así como los constantes conflictos entre autoridades en la Plata, hechos que fueron alentando, conjuntamente la influencia de pensadores de la ilustración, un caldo de cultivo para lo que sería los hechos que acaecerían en lo que conocemos como el “primer grito libertario de América”.",
         ],
         icon: <Pajarito />,
         image: Img5,
         bgcolor: "#7B3406",
+        doc: Doc5,
     },
     {
         id: 6,
@@ -71,6 +83,7 @@ export const timelineItems = [
         icon: <Pajarito />,
         image: Img6,
         bgcolor: "#752469",
+        doc: Doc6,
     },
     {
         id: 7,
@@ -82,5 +95,6 @@ export const timelineItems = [
         icon: <Pajarito />,
         image: Img7,
         bgcolor: "#015151",
+        doc: Doc7,
     },
 ];

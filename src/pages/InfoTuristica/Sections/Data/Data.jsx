@@ -11,7 +11,7 @@ export const sections = [
         ],
         to: "servicios",
         place: "left",
-        image: Sucre1,
+        video: "https://youtu.be/jBK_XcoYdz0",
     },
     {
         id: 2,
@@ -21,6 +21,6 @@ export const sections = [
         ],
         to: "turismo",
         place: "right",
-        image: Sucre2,
+        video: "https://youtu.be/PpHp3KFx7g0",
     },
 ];

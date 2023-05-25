@@ -3,10 +3,14 @@ import useNav from "../../hooks/useNav";
 import useInfoCard from "../../hooks/useInfoCard";
 import { IconoirProvider, Cancel } from "iconoir-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export function InfoCard() {
     const { infoCard, setInfoCard } = useInfoCard();
     const { title, content, image } = infoCard;
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <div className="infoCard">
             <div className="infoContent">
@@ -29,7 +33,9 @@ export function InfoCard() {
                     </div>
                 </div>
                 <div className="infoCard-content">
-                    <p>{content}</p>
+                    {content.map((paragraph, index) => (
+                        <p key={index}>{paragraph}</p>
+                    ))}
                 </div>
             </div>
         </div>

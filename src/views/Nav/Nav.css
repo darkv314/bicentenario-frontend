@@ -13,7 +13,8 @@
 
 .nav-icons {
     display: grid;
-    grid-template-columns: repeat(2, 8rem);
+    grid-template-columns: 16rem;
+    min-height: 4rem;
     gap: 1rem;
 }
 
@@ -60,9 +61,8 @@
     background-color: transparent;
 }
 
-@media (max-width: 525px) {
+@media (max-width: 350px) {
     .nav-icons {
-        grid-template-columns: repeat(2, 1.75rem);
-        gap: 1rem;
+        grid-template-columns: 12rem;
     }
 }

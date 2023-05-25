@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import Sucre from "../../../assets/timelineImages/sucre1.jpg";
-import Sucre2 from "../../../assets/timelineImages/sucre2.jpg";
+import ReactPlayer from "react-player/youtube";
 import "./Sections.css";
 import { motion } from "framer-motion";
 import { sections } from "./Data/Data";
@@ -15,7 +14,7 @@ export const Sections = () => {
     );
 };
 
-function SectionBanner({ title, description, image, to, place }) {
+function SectionBanner({ title, description, video, to, place }) {
     return (
         <div className="sectionBanner">
             <div className={`sectionBanner-content`}>
@@ -35,7 +34,9 @@ function SectionBanner({ title, description, image, to, place }) {
                 </Link>
             </div>
             <div className={`sectionBanner-img ${place}`}>
-                <img src={image} alt="" />
+                <ReactPlayer url={video} height={"100%"} width={"100%"} />
+                {/* <video src="https://youtu.be/jBK_XcoYdz0"></video> */}
+                {/* <img src={image} alt="" /> */}
             </div>
         </div>
     );

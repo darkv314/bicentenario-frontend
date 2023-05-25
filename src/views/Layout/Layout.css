@@ -13,7 +13,7 @@
 .content {
     display: grid;
     align-self: stretch;
-    position: relative;
+    /* position: relative; */
 }
 
 .nav-menu {
