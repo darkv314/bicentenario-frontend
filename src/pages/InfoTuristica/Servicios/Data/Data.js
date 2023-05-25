@@ -1,15 +1,15 @@
-// import Hot1 from "../../../../assets/timelineImages/hoteleria/Hot1.jpg";
-import Hot2 from "../../../../assets/timelineImages/hoteleria/Hot2.jpg";
-import Hot3 from "../../../../assets/timelineImages/hoteleria/Hot3.jpg";
-import Hot4 from "../../../../assets/timelineImages/hoteleria/Hot4.jpeg";
-import Res1 from "../../../../assets/timelineImages/gastronomia/Res1.jpg";
-import Res2 from "../../../../assets/timelineImages/gastronomia/Res2.jpg";
-import Res3 from "../../../../assets/timelineImages/gastronomia/Res3.jpg";
-import Res4 from "../../../../assets/timelineImages/gastronomia/Res4.jpeg";
-import En1 from "../../../../assets/timelineImages/entretenimiento/En1.jpg";
-import En2 from "../../../../assets/timelineImages/entretenimiento/En2.jpg";
-import En3 from "../../../../assets/timelineImages/entretenimiento/En3.jpg";
-import En4 from "../../../../assets/timelineImages/entretenimiento/En4.jpeg";
+import Hot1 from "../../../../assets/timelineImages/hoteleria/hot1.jpg";
+import Hot2 from "../../../../assets/timelineImages/hoteleria/hot2.jpg";
+import Hot3 from "../../../../assets/timelineImages/hoteleria/hot3.jpg";
+import Hot4 from "../../../../assets/timelineImages/hoteleria/hot4.jpeg";
+import Res1 from "../../../../assets/timelineImages/gastronomia/res1.jpg";
+import Res2 from "../../../../assets/timelineImages/gastronomia/res2.jpg";
+import Res3 from "../../../../assets/timelineImages/gastronomia/res3.jpg";
+import Res4 from "../../../../assets/timelineImages/gastronomia/res4.jpeg";
+import En1 from "../../../../assets/timelineImages/entretenimiento/en1.jpg";
+import En2 from "../../../../assets/timelineImages/entretenimiento/en2.jpg";
+import En3 from "../../../../assets/timelineImages/entretenimiento/en3.jpg";
+import En4 from "../../../../assets/timelineImages/entretenimiento/en4.jpeg";
 
 export const ServiciosList = [
     {
@@ -21,7 +21,7 @@ export const ServiciosList = [
                 title: "Parador Santa María La Real",
                 description:
                     "Hotel 5 estrellas con habitaciones pensadas para una estadía placentera y experiencias entre reliquias coloniales.",
-                image: Hot2,
+                image: Hot1,
                 link: "https://www.parador.com.bo/",
             },
             {
