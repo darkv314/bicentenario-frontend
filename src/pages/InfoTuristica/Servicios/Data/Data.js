@@ -1,5 +1,3 @@
-import Sucre from "../../../../assets/timelineImages/sucre1.jpg";
-import Sucre2 from "../../../../assets/timelineImages/sucre2.jpg";
 import Hot1 from "../../../../assets/timelineImages/Hoteleria/Hot1.jpg";
 import Hot2 from "../../../../assets/timelineImages/Hoteleria/Hot2.jpg";
 import Hot3 from "../../../../assets/timelineImages/Hoteleria/Hot3.jpg";
