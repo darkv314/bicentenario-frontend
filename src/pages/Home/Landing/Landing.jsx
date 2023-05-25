@@ -2,7 +2,8 @@ import { Banner } from "../../../views/VideoBanner/VideoBanner";
 import TimeLine from "../../../views/TimeLine/TimeLine";
 import About from "../../../assets/homeImages/about.jpg";
 import portada from "../../../assets/logos/portada.jpg";
-import libro from "../../../assets/docs/Cartilla7AsambleaConstituyenteBicentenario.pdf";
+import logoQuique from "../../../assets/logos/quiqueHorizontal.png";
+import { Link } from "react-router-dom";
 
 export const Landing = () => {
     return (
@@ -11,6 +12,7 @@ export const Landing = () => {
             <Vision />
             <TimeLine />
             <BookBanner />
+            <Footer />
         </div>
     );
 };
@@ -44,14 +46,31 @@ function BookBanner() {
     };
     return (
         <div className="bookBanner">
-            <div className="bookBanner-img">
-                <img src={portada} alt="" />
-            </div>
-            <div className="bookBanner-content">
-                <h2>El Horizonte del Bicentenario</h2>
-                <p>Descarga el libro en formato pdf y de forma gratuita</p>
-                <button onClick={handleClick}>Mira el libro aquí</button>
+            <div className="background-banner">
+                <div className="bookBanner-img">
+                    <img src={portada} alt="" />
+                </div>
+                <div className="bookBanner-content">
+                    <h2>El Horizonte del Bicentenario</h2>
+                    <p>Descarga el libro en formato pdf y de forma gratuita</p>
+                    <button onClick={handleClick}>Mira el libro aquí</button>
+                </div>
             </div>
         </div>
+    );
+}
+
+function Footer() {
+    return (
+        <footer>
+            <div className="footer-img">
+                <img src={logoQuique} alt="" />
+            </div>
+            <div className="line"></div>
+            <div className="footer-content">
+                Copyright 2023 © | Desarrollado por{" "}
+                <Link to={"https://inextensosrl.com/"}>In Extenso S.R.L.</Link>
+            </div>
+        </footer>
     );
 }

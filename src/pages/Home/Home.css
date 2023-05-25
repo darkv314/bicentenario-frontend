@@ -32,13 +32,27 @@
     border-radius: 0.7rem;
 }
 
-.bookBanner {
+.background-banner {
     display: grid;
     grid-template-columns: 30% auto;
     justify-self: center;
     align-self: center;
+    padding: 1rem;
+    gap: 1rem;
+    border: 2px solid #cdcdcd;
+    /* background-color: #cdcdcd; */
+    border-radius: 0.5rem;
+    /* color: black; */
+}
+
+.bookBanner {
+    display: grid;
+    /* grid-template-columns: 30% auto; */
+    justify-self: center;
+    align-self: center;
     padding: 1rem 2rem;
     gap: 1rem;
+    /* background-color: #cdcdcd; */
 }
 
 .bookBanner-img {
@@ -88,9 +102,64 @@
     }
 }
 
+footer {
+    border-top: 1px solid #858585;
+    display: grid;
+    grid-template-columns: 68% 1% 30%;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    /* background-color: #d42d1f; */
+    max-height: 12.5rem;
+    color: #fff;
+    place-items: center;
+    background-color: #482d5c;
+}
+
+footer a {
+    color: white;
+}
+
+.footer-content {
+    display: grid;
+    justify-items: start;
+    justify-self: start;
+
+    /* border-left: 1px solid #858585; */
+}
+
+.footer-img {
+    display: grid;
+}
+
+.footer-img img {
+    width: 100%;
+    max-height: 10rem;
+    /* height: 100%; */
+    object-fit: cover;
+    border-radius: 0.7rem;
+    justify-self: end;
+}
+
+.line {
+    /* display: absolute; */
+    height: 10rem;
+    border: 1px solid #858585;
+}
+
 @media (max-width: 700px) {
     .bookBanner {
         grid-template-columns: 1fr;
         grid-template-rows: 0.25fr auto;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50% 1% 1fr;
+        max-height: none;
+    }
+
+    .line {
+        height: 1px;
+        width: 100%;
     }
 }
