@@ -2,7 +2,7 @@ import { Banner } from "../../../views/VideoBanner/VideoBanner";
 import TimeLine from "../../../views/TimeLine/TimeLine";
 import About from "../../../assets/homeImages/about.jpg";
 import portada from "../../../assets/logos/portada.jpg";
-import libro from "../../../assets/docs/ElHorizontedelBicentenario2023.pdf";
+import libro from "../../../assets/docs/Cartilla7AsambleaConstituyenteBicentenario.pdf";
 
 export const Landing = () => {
     return (
