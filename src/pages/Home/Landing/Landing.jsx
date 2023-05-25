@@ -38,7 +38,9 @@ function Vision() {
 
 function BookBanner() {
     const handleClick = () => {
-        window.open(libro);
+        window.open(
+            "https://drive.google.com/file/d/11qI6qw69--E1qJislqyfkQBUZ6nqF_IU/view?usp=share_link"
+        );
     };
     return (
         <div className="bookBanner">

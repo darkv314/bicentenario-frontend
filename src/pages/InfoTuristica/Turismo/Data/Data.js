@@ -1,85 +1,29 @@
-import Sucre from "../../../../assets/timelineImages/sucre1.jpg";
-import Sucre2 from "../../../../assets/timelineImages/sucre2.jpg";
+import potolo from "../../../../assets/turismo/Potolo.jpg";
+import maragua from "../../../../assets/turismo/Maragua.jpg";
 
 export const ServiciosList = [
     {
         id: 1,
         title: "Potolo",
+        description:
+            "Lugar entre coloridas montañas, donde habitan pobladores jalqas con culturas ancestrales vivas.Las actividades turísticas a realizarse son:",
         items: [
-            {
-                id: 1,
-                title: "Hotel 1",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-                image: Sucre2,
-                link: "http://glorieta-hotel.bo-hotel.com/",
-            },
-            {
-                id: 2,
-                title: "Hotel 2",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-                image: Sucre,
-                link: "http://glorieta-hotel.bo-hotel.com/",
-            },
-            {
-                id: 3,
-                title: "Hotel 3",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-                image: Sucre,
-                link: "http://glorieta-hotel.bo-hotel.com/",
-            },
-            {
-                id: 4,
-                title: "Hotel 4",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-                image: Sucre,
-                link: "http://glorieta-hotel.bo-hotel.com/",
-            },
+            "Senderismo, con muchas rutas en la zona de distintos niveles de preparación física.",
+            "Visita al pueblo de Potolo, que cuenta con una población de aproximadamente 1,000 personas y está ubicado en un hermoso valle con construcciones de la época colonia",
+            "Visita al mercado, lugar donde se puede adquirir artesanías locales de gran valor cultural.",
+            "Alojamiento, ubicados en el centro del pueblo con servicios cocina, bar y esparcimiento de acuerdo a diversas necesidades y gustos de los visitantes.",
         ],
+        image: potolo,
     },
     {
         id: 2,
+        description: "Territorio de alta riqueza de patrimonio natural.",
         title: "Maragua",
         items: [
-            {
-                id: 1,
-                title: "Restaurante 1",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-                image: Sucre2,
-                link: "https://www.facebook.com/bienmesabesucre",
-            },
-            {
-                id: 2,
-                title: "Restaurante 2",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-                image: Sucre2,
-                link: "https://www.facebook.com/bienmesabesucre",
-            },
-            {
-                id: 3,
-                title: "Restaurante 3",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-                image: Sucre2,
-                link: "https://www.facebook.com/bienmesabesucre",
-            },
-            {
-                id: 4,
-                title: "Restaurante 4",
-                description:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-                image: Sucre2,
-                link: "https://www.facebook.com/bienmesabesucre",
-            },
+            "Visita al gran Cráter de Maragua, una profunda depresión formada por el impacto de un meteorito hace millones de años.",
+            "Senderismo en las montañas y valles circundantes.",
+            "Visita a la Cascada de Maragua, hermoso patrimonio natural ubicado a las afueras del pueblo.",
         ],
-    },
-    {
-        id: 3,
-        title: "Chataquila",
+        image: maragua,
     },
 ];
