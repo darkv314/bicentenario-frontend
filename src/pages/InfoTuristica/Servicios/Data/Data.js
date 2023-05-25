@@ -1,4 +1,4 @@
-import Hot1 from "../../../../assets/timelineImages/hoteleria/Hot1.jpg";
+// import Hot1 from "../../../../assets/timelineImages/hoteleria/Hot1.jpg";
 import Hot2 from "../../../../assets/timelineImages/hoteleria/Hot2.jpg";
 import Hot3 from "../../../../assets/timelineImages/hoteleria/Hot3.jpg";
 import Hot4 from "../../../../assets/timelineImages/hoteleria/Hot4.jpeg";
@@ -21,7 +21,7 @@ export const ServiciosList = [
                 title: "Parador Santa María La Real",
                 description:
                     "Hotel 5 estrellas con habitaciones pensadas para una estadía placentera y experiencias entre reliquias coloniales.",
-                image: Hot1,
+                image: Hot2,
                 link: "https://www.parador.com.bo/",
             },
             {
