@@ -147,7 +147,7 @@ footer a {
 }
 
 @media (max-width: 700px) {
-    .bookBanner {
+    .background-banner {
         grid-template-columns: 1fr;
         grid-template-rows: 0.25fr auto;
     }
