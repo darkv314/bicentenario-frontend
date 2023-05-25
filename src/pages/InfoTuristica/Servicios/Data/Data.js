@@ -1,15 +1,15 @@
-import Hot1 from "../../../../assets/timelineImages/Hoteleria/Hot1.jpg";
-import Hot2 from "../../../../assets/timelineImages/Hoteleria/Hot2.jpg";
-import Hot3 from "../../../../assets/timelineImages/Hoteleria/Hot3.jpg";
-import Hot4 from "../../../../assets/timelineImages/Hoteleria/Hot4.jpeg";
-import Res1 from "../../../../assets/timelineImages/Gastronomia/Res1.jpg";
-import Res2 from "../../../../assets/timelineImages/Gastronomia/Res2.jpg";
-import Res3 from "../../../../assets/timelineImages/Gastronomia/Res3.jpg";
-import Res4 from "../../../../assets/timelineImages/Gastronomia/Res4.jpeg";
-import En1 from "../../../../assets/timelineImages/Entretenimiento/En1.jpg";
-import En2 from "../../../../assets/timelineImages/Entretenimiento/En2.jpg";
-import En3 from "../../../../assets/timelineImages/Entretenimiento/En3.jpg";
-import En4 from "../../../../assets/timelineImages/Entretenimiento/En4.jpeg";
+import Hot1 from "../../../../assets/timelineImages/hoteleria/Hot1.jpg";
+import Hot2 from "../../../../assets/timelineImages/hoteleria/Hot2.jpg";
+import Hot3 from "../../../../assets/timelineImages/hoteleria/Hot3.jpg";
+import Hot4 from "../../../../assets/timelineImages/hoteleria/Hot4.jpeg";
+import Res1 from "../../../../assets/timelineImages/gastronomia/Res1.jpg";
+import Res2 from "../../../../assets/timelineImages/gastronomia/Res2.jpg";
+import Res3 from "../../../../assets/timelineImages/gastronomia/Res3.jpg";
+import Res4 from "../../../../assets/timelineImages/gastronomia/Res4.jpeg";
+import En1 from "../../../../assets/timelineImages/entretenimiento/En1.jpg";
+import En2 from "../../../../assets/timelineImages/entretenimiento/En2.jpg";
+import En3 from "../../../../assets/timelineImages/entretenimiento/En3.jpg";
+import En4 from "../../../../assets/timelineImages/entretenimiento/En4.jpeg";
 
 export const ServiciosList = [
     {
