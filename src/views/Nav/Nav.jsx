@@ -8,18 +8,28 @@ import NavLogosH from "../../assets/logos/navLogosH.png";
 
 import "./Nav.css";
 import { useWindowWidth } from "@react-hook/window-size";
-import { Link } from "react-router-dom";
-import { navLinkList } from "../../Helpers/Helpers";
+import { Link, useLocation } from "react-router-dom";
+import { navLinkList, navLinkListProvisional } from "../../Helpers/Helpers";
 import { IconoirProvider, Menu } from "iconoir-react";
 import useNav from "../../hooks/useNav";
+import { useEffect, useState } from "react";
 
 function Nav({ setMenu }) {
+    const location = useLocation();
     const width = useWindowWidth();
     const navRef = useNav();
     const navIconsStyle = {
         gridTemplateColumns: "repeat(2, 1.75rem)",
         gap: "1rem",
     };
+    const [navList, setNavList] = useState(navLinkList);
+
+    useEffect(() => {
+        location.pathname.includes("historia")
+            ? setNavList(navLinkList)
+            : setNavList(navLinkListProvisional);
+    }, [location.pathname]);
+
     return (
         <nav className="bicentenario-nav" ref={navRef}>
             <div className="nav-icons">
@@ -50,7 +60,7 @@ function Nav({ setMenu }) {
                         </IconoirProvider>
                     </button>
                 ) : (
-                    navLinkList.map((link) => (
+                    navList.map((link) => (
                         <Link key={link.path} to={link.path}>
                             {link.name}
                         </Link>

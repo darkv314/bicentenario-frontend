@@ -1,0 +1,20 @@
+.provisional-container {
+    min-height: 90dvh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2rem;
+}
+
+.corredor-container {
+    max-width: 400px;
+}
+
+.alcalde-container {
+    max-width: 100vw;
+}
+
+img {
+    width: 100%;
+}

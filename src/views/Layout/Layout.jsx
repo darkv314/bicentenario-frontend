@@ -1,10 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
 import Nav from "../Nav/Nav";
 import "./Layout.css";
-import { useState } from "react";
-import { navLinkList } from "../../Helpers/Helpers";
+import { useEffect, useState } from "react";
+import { navLinkList, navLinkListProvisional } from "../../Helpers/Helpers";
 import { IconoirProvider, Cancel } from "iconoir-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 function Layout() {
     const [menu, setMenu] = useState(false);
@@ -31,11 +32,18 @@ function Layout() {
 export default Layout;
 
 function Menu({ setMenu }) {
+    const location = useLocation();
+    const [navList, setNavList] = useState(navLinkList);
     const animation = {
         hidden: { x: 125, opacity: 0 },
         visible: { x: 0, opacity: 1 },
         exit: { x: 125, opacity: 0 },
     };
+    useEffect(() => {
+        location.pathname.includes("historia")
+            ? setNavList(navLinkList)
+            : setNavList(navLinkListProvisional);
+    }, [location.pathname]);
     return (
         <div className="background-menu">
             <motion.div
@@ -62,7 +70,7 @@ function Menu({ setMenu }) {
                             <Cancel />
                         </IconoirProvider>
                     </button>
-                    {navLinkList.map((link) => (
+                    {navList.map((link) => (
                         <Link
                             onClick={() => setMenu(false)}
                             key={link.path}

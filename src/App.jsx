@@ -4,6 +4,7 @@ import InfoTuristica from "./pages/InfoTuristica/InfoTuristica";
 import { Sections } from "./pages/InfoTuristica/Sections/Sections";
 import { Servicios } from "./pages/InfoTuristica/Servicios/Servicios";
 import Turismo from "./pages/InfoTuristica/Turismo/Turismo";
+import Provisional from "./pages/Provisional/Provisional";
 import { InfoCard } from "./views/InfoCard/InfoCard";
 import Layout from "./views/Layout/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -14,7 +15,11 @@ const router = createBrowserRouter([
         element: <Layout />,
         children: [
             {
-                path: "",
+                index: true,
+                element: <Provisional />,
+            },
+            {
+                path: "historia",
                 element: <Home />,
                 children: [
                     {
@@ -25,23 +30,23 @@ const router = createBrowserRouter([
                         path: ":id",
                         element: <InfoCard />,
                     },
-                ],
-            },
-            {
-                path: "info-turistica",
-                element: <InfoTuristica />,
-                children: [
                     {
-                        index: true,
-                        element: <Sections />,
-                    },
-                    {
-                        path: "servicios",
-                        element: <Servicios />,
-                    },
-                    {
-                        path: "turismo",
-                        element: <Turismo />,
+                        path: "info-turistica",
+                        element: <InfoTuristica />,
+                        children: [
+                            {
+                                index: true,
+                                element: <Sections />,
+                            },
+                            {
+                                path: "servicios",
+                                element: <Servicios />,
+                            },
+                            {
+                                path: "turismo",
+                                element: <Turismo />,
+                            },
+                        ],
                     },
                 ],
             },
