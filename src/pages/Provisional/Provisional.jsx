@@ -17,7 +17,7 @@ function Provisional() {
                 src={videoSrc}
                 width="100%"
                 allow="autoplay"
-                title="My video from Google Drive"
+                title="Corredor Urbano: Parques"
             ></iframe>
             <div className="alcalde-container">
                 <img src={alcalde} alt="" />
