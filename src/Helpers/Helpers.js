@@ -27,7 +27,7 @@ export const navLinkListProvisional = [
         name: "Historia",
     },
     {
-        path: "http://www.sucre.travel",
+        path: "https://www.sucre.travel",
         name: "Turismo",
     },
 ];
