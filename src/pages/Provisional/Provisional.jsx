@@ -13,7 +13,7 @@ function Provisional() {
         <div className="provisional-container">
             <div className="corredor-container">
                 <img src={corredor} alt="" />
-                <Banner src={VideoBanner} />
+                <Banner src={VideoBanner} banner={false} />
             </div>
             <iframe
                 style={{ height: "60dvh" }}

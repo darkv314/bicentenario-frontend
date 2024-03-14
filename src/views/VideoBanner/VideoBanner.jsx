@@ -5,7 +5,7 @@ import useNav from "../../hooks/useNav";
 import LogoBlanco from "../../assets/logos/bicVB.png";
 import { useEffect, useState } from "react";
 
-export const Banner = ({ src }) => {
+export const Banner = ({ src, banner = true }) => {
     const navRef = useNav();
     const navHeight = navRef?.current?.offsetHeight;
     const style = {
@@ -17,12 +17,14 @@ export const Banner = ({ src }) => {
     }, []);
     return (
         <div className="banner" style={style}>
-            <video src={src} autoPlay muted loop></video>
-            <div className="banner-content">
-                <div className="banner-img">
-                    <img src={LogoBlanco} alt="" />
+            <video src={src} banner autoPlay muted loop></video>
+            {banner && (
+                <div className="banner-content">
+                    <div className="banner-img">
+                        <img src={LogoBlanco} alt="" />
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };
