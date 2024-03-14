@@ -4,10 +4,10 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem 2rem;
 }
 
-.corredor-container {
+.corredor-container img {
+    padding: 1rem;
     max-width: 400px;
 }
 

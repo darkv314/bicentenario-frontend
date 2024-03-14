@@ -4,11 +4,12 @@ import About from "../../../assets/homeImages/about.jpg";
 import portada from "../../../assets/logos/portada.jpg";
 import logoQuique from "../../../assets/logos/quiqueHorizontal.png";
 import { Link } from "react-router-dom";
+import VideoBanner from "../../../assets/video/videoBanner.webm";
 
 export const Landing = () => {
     return (
         <div className="home">
-            <Banner />
+            <Banner src={VideoBanner} />
             <Vision />
             <TimeLine />
             <BookBanner />
