@@ -1,3 +1,4 @@
+import Bicentenario from "./pages/Bicentenario/Bicentenario";
 import Home from "./pages/Home/Home";
 import { Landing } from "./pages/Home/Landing/Landing";
 import InfoTuristica from "./pages/InfoTuristica/InfoTuristica";
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Provisional />,
+                element: <Bicentenario />,
             },
             {
                 path: "historia",

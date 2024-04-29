@@ -1,0 +1,25 @@
+.ubicacion {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.ubicacion h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.95rem;
+}
+
+.ubicacion:nth-child(1) {
+    color: var(--verde);
+}
+.ubicacion:nth-child(2) {
+    color: var(--morado);
+}
+.ubicacion:nth-child(3) {
+    color: var(--naranja);
+}

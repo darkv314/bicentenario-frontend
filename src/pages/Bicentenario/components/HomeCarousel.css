@@ -1,0 +1,14 @@
+.homeCarousel {
+    display: grid;
+    width: 100%;
+}
+
+.homeCarousel:first-child {
+    min-width: 100%;
+}
+
+.homeCarouselSlide {
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
