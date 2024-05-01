@@ -1,14 +1,15 @@
-import { useEffect, useRef } from "react";
 import { Ubicacion } from "../../components/shared/Map/MapComponent";
 import MapComponent from "../../components/shared/Map/MapComponent";
-import electricidad from "../../assets/bicentenarioImages/menuMap/electricidad.png";
+import test from "../../assets/bicentenarioImages/menuMap/proyecto/test.jpeg";
 import HomeCarousel from "./components/HomeCarousel";
 import ubicacionVerde from "../../assets/bicentenarioImages/menuMap/ubicaciones/ubicacionVerde.png";
 import ubicacionMorada from "../../assets/bicentenarioImages/menuMap/ubicaciones/ubicacionMorada.png";
 import ubicacionNaranja from "../../assets/bicentenarioImages/menuMap/ubicaciones/ubicacionNaranja.png";
-
+import banerAlcalde from "../../assets/bicentenarioImages/banerAlcalde.jpg";
 import "./Bicentenario.css";
 import MapMenu from "./components/MapMenu";
+import ProjectBanner from "./components/ProjectBanner";
+import PlanesComplementarios from "./components/PlanesComplementarios";
 
 function Bicentenario() {
     return (
@@ -24,12 +25,105 @@ function Bicentenario() {
                         de <h1>Bolivia</h1>
                     </span>
                 </span>
-
-                {/* Add carousel here */}
             </section>
             <HomeCarousel />
             <MapSection />
             <MapMenu />
+            <ProjectBanner
+                bannerColor="var(--azul)"
+                textColor="var(--verde)"
+                title="Mejora de areas verdes y espacios publicos"
+                projects={[
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                ]}
+            />
+            <ProjectBanner
+                bannerColor="var(--azul)"
+                textColor="var(--verde)"
+                title="Mejora de areas verdes y espacios publicos"
+                projects={[
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                ]}
+            />
+            <ProjectBanner
+                bannerColor="var(--azul)"
+                textColor="var(--verde)"
+                title="Mejora de areas verdes y espacios publicos"
+                projects={[
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                    {
+                        title: "Parque urbano los olmos",
+                        img: test,
+                    },
+                ]}
+            />
+            <PlanesComplementarios />
+            <img src={banerAlcalde} alt="Baner alcalde" />
         </div>
     );
 }

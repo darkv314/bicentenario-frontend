@@ -1,0 +1,139 @@
+.banner-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    width: 100%;
+    h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+
+    @media (max-width: 475px) {
+        h1 {
+            font-size: 1.25rem;
+            text-align: center;
+        }
+    }
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 150px;
+
+    .project-title {
+        position: relative;
+        display: grid;
+        z-index: 5;
+        background-color: #ffffffd0;
+        padding: 0.5rem;
+
+        h2 {
+            font-family: "Poppins", sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+    }
+
+    @media (min-width: 750px) {
+        max-width: 300px;
+    }
+}
+
+.project-img-container {
+    position: relative;
+    width: 175px;
+    height: 175px;
+
+    border-radius: 50%;
+    top: 10px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    @media screen and (min-width: 350px) {
+        width: 225px;
+        height: 225px;
+    }
+}
+
+.project-decoration {
+    display: flex;
+    gap: 5px;
+    justify-self: end;
+    align-self: flex-end;
+    span {
+        width: 7.5px;
+        height: 7.5px;
+    }
+}
+
+.embla {
+    position: relative;
+    display: grid;
+    box-sizing: border-box;
+    max-width: 100%;
+    --slide-height: 19rem;
+    --slide-spacing: 1rem;
+    --slide-size: 100%;
+    --slide-spacing-sm: 1.6rem;
+    --slide-size-sm: 50%;
+    --slide-spacing-lg: 2rem;
+    --slide-size-lg: calc(100% / 4);
+}
+
+.embla__viewport {
+    overflow: hidden;
+}
+
+.embla__container {
+    backface-visibility: hidden;
+    display: flex;
+    touch-action: pan-y;
+    margin-left: calc(var(--slide-spacing) * -1);
+}
+
+.embla__slide {
+    min-width: 0;
+    flex: 0 0 var(--slide-size);
+    display: flex;
+    justify-content: center;
+    padding-left: 0.5rem;
+}
+
+@media (min-width: 680px) {
+    .embla__slide {
+        flex: 0 0 var(--slide-size-sm);
+    }
+}
+
+@media (min-width: 1200px) {
+    .embla__slide {
+        flex: 0 0 var(--slide-size-lg);
+    }
+}
+
+.nav-carousel-button {
+    position: absolute;
+    align-self: center;
+    z-index: 10;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    font-size: 1rem;
+    @media (min-width: 350px) {
+        font-size: 2rem;
+    }
+}
+
+.button-right {
+    justify-self: end;
+}

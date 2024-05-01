@@ -37,7 +37,7 @@ function MapMenu() {
                 <span className="titles">
                     {icons.map((icon, index) => (
                         <h3
-                            key={`title ${index.title}`}
+                            key={`title ${icon.title}`}
                             onMouseEnter={() => handleSlideChange(index)}
                         >
                             {icon.title}

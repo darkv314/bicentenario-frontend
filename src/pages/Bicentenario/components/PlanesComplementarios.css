@@ -1,0 +1,71 @@
+.planes-complementarios {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 3rem;
+    align-items: center;
+    span {
+        width: 70%;
+        align-self: center;
+        display: flex;
+        gap: 5px;
+    }
+
+    span > div:nth-child(2n + 1) {
+        /* Target divs directly */
+        background-color: red;
+    }
+
+    span > div:nth-child(2n) {
+        /* Target odd divs */
+        background-color: blue;
+    }
+
+    @media (max-width: 350px) {
+        padding: 2rem 0;
+    }
+}
+
+.planes-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.planes-complementarios h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+
+    @media (max-width: 350px) {
+        font-size: 1.5rem;
+    }
+}
+
+.planes-title-decoration {
+    width: 25%;
+    height: 3px;
+}
+
+.planes-container {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    place-items: center;
+
+    @media (max-width: 1080px) {
+        grid-template-columns: repeat(2, 250px);
+    }
+
+    @media (max-width: 570px) {
+        grid-template-columns: repeat(1, 250px);
+    }
+}
+
+.plan {
+    img {
+        width: 250px;
+    }
+}

@@ -8,6 +8,7 @@
     display: flex;
     gap: 1.5rem;
     align-items: center;
+    flex-direction: column;
     padding: 1rem;
 }
 
@@ -45,15 +46,34 @@
     color: rgb(181, 181, 181);
 }
 
-.titles h3:nth-child(1):hover {
+@media (min-width: 800px) {
+    .map-menu-main {
+        flex-direction: row;
+        padding: 2rem;
+    }
+    .titles h3:nth-child(1):hover {
+        color: var(--verde);
+    }
+    .titles h3:nth-child(2):hover {
+        color: var(--morado);
+    }
+    .titles h3:nth-child(3):hover {
+        color: var(--naranja);
+    }
+    .titles h3:nth-child(4):hover {
+        color: var(--rojo);
+    }
+}
+
+.titles h3:nth-child(1) {
     color: var(--verde);
 }
-.titles h3:nth-child(2):hover {
+.titles h3:nth-child(2) {
     color: var(--morado);
 }
-.titles h3:nth-child(3):hover {
+.titles h3:nth-child(3) {
     color: var(--naranja);
 }
-.titles h3:nth-child(4):hover {
+.titles h3:nth-child(4) {
     color: var(--rojo);
 }
