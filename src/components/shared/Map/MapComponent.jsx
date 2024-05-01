@@ -7,7 +7,9 @@ function MapComponent({ width, height, points }) {
     useEffect(() => {
         map = new maplibregl.Map({
             container: mapContainer.current,
-            style: "https://api.maptiler.com/maps/hybrid/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL",
+            style: `https://api.maptiler.com/maps/hybrid/style.json?key=${
+                import.meta.env.VITE_MAP_KEY
+            }`,
         });
         map.on("load", async () => {
             const image = await map.loadImage(
