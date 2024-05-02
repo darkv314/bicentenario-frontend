@@ -26,7 +26,7 @@ function formatGrupoProyecto(grupoProyecto) {
             bannerColor: grupoProyectoAttributes.colors.bannerColor,
             textColor: grupoProyectoAttributes.colors.textColor,
         },
-        proyectos: grupoProyectoAttributes.proyectos.data.map((proyecto) => {
+        proyectos: grupoProyectoAttributes.proyectos.data?.map((proyecto) => {
             const proyectoAttributes = proyecto.attributes;
             return {
                 titulo: proyectoAttributes.titulo,
@@ -34,11 +34,11 @@ function formatGrupoProyecto(grupoProyecto) {
                 montoInversion: proyectoAttributes.montoInversion,
                 imagenPrincipal:
                     proyectoAttributes.imagenPrincipal.data.attributes.url,
-                galeria: proyectoAttributes.galeria.data.map((imagen) => {
+                galeria: proyectoAttributes.galeria.data?.map((imagen) => {
                     return imagen.attributes.url;
                 }),
                 videoMaqueta:
-                    proyectoAttributes.videoMaqueta.data.attributes.url,
+                    proyectoAttributes.videoMaqueta.data?.attributes.url,
             };
         }),
     };

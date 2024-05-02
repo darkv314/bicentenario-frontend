@@ -43,7 +43,7 @@ function ProjectBanner({ titulo, proyectos, bannerColor, textColor }) {
                 <div className="embla__viewport" ref={emblaRef}>
                     <div className="embla__container">
                         {proyectos?.map((project, index) => (
-                            <div className="embla__slide" key={index}>
+                            <div className="embla__slide" key={project.titulo}>
                                 <ProjectCard
                                     titulo={project.titulo}
                                     imagenPrincipal={project.imagenPrincipal}
