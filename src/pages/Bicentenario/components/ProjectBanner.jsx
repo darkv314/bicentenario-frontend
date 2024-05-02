@@ -1,9 +1,8 @@
 import "./ProjectBanner.css";
-import { useRef, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { IconoirProvider, NavArrowLeft, NavArrowRight } from "iconoir-react";
 
-function ProjectBanner({ title, projects, bannerColor, textColor }) {
+function ProjectBanner({ titulo, proyectos, bannerColor, textColor }) {
     const [emblaRef, emblaRefObject] = useEmblaCarousel({
         align: "start",
         loop: true,
@@ -17,7 +16,7 @@ function ProjectBanner({ title, projects, bannerColor, textColor }) {
                 color: textColor,
             }}
         >
-            <h1 style={{ color: textColor }}>{title}</h1>
+            <h1 style={{ color: textColor }}>{titulo}</h1>
             <div className="embla">
                 <button
                     onClick={() => emblaRefObject.scrollPrev()}
@@ -43,11 +42,11 @@ function ProjectBanner({ title, projects, bannerColor, textColor }) {
                 </button>
                 <div className="embla__viewport" ref={emblaRef}>
                     <div className="embla__container">
-                        {projects.map((project, index) => (
+                        {proyectos?.map((project, index) => (
                             <div className="embla__slide" key={index}>
                                 <ProjectCard
-                                    title={project.title}
-                                    img={project.img}
+                                    titulo={project.titulo}
+                                    imagenPrincipal={project.imagenPrincipal}
                                     color={textColor}
                                 />
                             </div>
@@ -61,7 +60,7 @@ function ProjectBanner({ title, projects, bannerColor, textColor }) {
 
 export default ProjectBanner;
 
-function ProjectCard({ title, img, color }) {
+function ProjectCard({ titulo, imagenPrincipal, color }) {
     return (
         <div className="embla__slide">
             <div className="project-card" style={{ color }}>
@@ -72,10 +71,15 @@ function ProjectCard({ title, img, color }) {
                         padding: "0.65rem",
                     }}
                 >
-                    <img src={img} alt={title} />
+                    <img
+                        src={`${
+                            import.meta.env.VITE_API_URL
+                        }${imagenPrincipal}`}
+                        alt={titulo}
+                    />
                 </span>
                 <div className="project-title">
-                    <h2>{title}</h2>
+                    <h2>{titulo}</h2>
                     <span className="project-decoration">
                         {Array.from({ length: 3 }).map((_, index) => (
                             <span

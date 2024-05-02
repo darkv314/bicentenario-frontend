@@ -10,8 +10,16 @@ import "./Bicentenario.css";
 import MapMenu from "./components/MapMenu";
 import ProjectBanner from "./components/ProjectBanner";
 import PlanesComplementarios from "./components/PlanesComplementarios";
+import { useQuery } from "@tanstack/react-query";
+import { getGruposProyectos } from "../../services/GroupoProyectos";
+import { useEffect } from "react";
 
 function Bicentenario() {
+    const { data } = useQuery({
+        queryKey: ["gruposProyectos"],
+        queryFn: () => getGruposProyectos(),
+    });
+
     return (
         <div className="bicentenario-container">
             <section className="header-bicentenario">
@@ -29,99 +37,16 @@ function Bicentenario() {
             <HomeCarousel />
             <MapSection />
             <MapMenu />
-            <ProjectBanner
-                bannerColor="var(--azul)"
-                textColor="var(--verde)"
-                title="Mejora de areas verdes y espacios publicos"
-                projects={[
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                ]}
-            />
-            <ProjectBanner
-                bannerColor="var(--azul)"
-                textColor="var(--verde)"
-                title="Mejora de areas verdes y espacios publicos"
-                projects={[
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                ]}
-            />
-            <ProjectBanner
-                bannerColor="var(--azul)"
-                textColor="var(--verde)"
-                title="Mejora de areas verdes y espacios publicos"
-                projects={[
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                    {
-                        title: "Parque urbano los olmos",
-                        img: test,
-                    },
-                ]}
-            />
+            {data &&
+                data.map((grupoProyecto) => (
+                    <ProjectBanner
+                        key={grupoProyecto.nombre}
+                        bannerColor={`var(--${grupoProyecto.colores.bannerColor})`}
+                        textColor={`var(--${grupoProyecto.colores.textColor})`}
+                        titulo={grupoProyecto.titulo}
+                        proyectos={grupoProyecto.proyectos}
+                    />
+                ))}
             <PlanesComplementarios />
             <img src={banerAlcalde} alt="Baner alcalde" />
         </div>
