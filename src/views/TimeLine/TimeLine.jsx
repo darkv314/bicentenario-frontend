@@ -54,7 +54,7 @@ function TimeLineItem({ icon, image, content, title, bgcolor, doc }) {
     function handleClick() {
         if (windowWidth <= 500) {
             setInfoCard({ title, content, image, clicked: true });
-            navigate(`/${title.replace(/\s/g, "").toLowerCase()}`);
+            navigate(`${title.replace(/\s/g, "").toLowerCase()}`);
         }
     }
 

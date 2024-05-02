@@ -1,5 +1,4 @@
 import "./InfoCard.css";
-import useNav from "../../hooks/useNav";
 import useInfoCard from "../../hooks/useInfoCard";
 import { IconoirProvider, Cancel } from "iconoir-react";
 import { Link } from "react-router-dom";
@@ -14,7 +13,7 @@ export function InfoCard() {
     return (
         <div className="infoCard">
             <div className="infoContent">
-                <Link to="/..">
+                <Link to="..">
                     <button
                         className="infoCard-close"
                         onClick={() => {
