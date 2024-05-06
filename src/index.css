@@ -40,7 +40,9 @@ h3 {
     display: flex;
     --verde: #47bd47;
     --morado: #582277;
+    --morado-claro: #c87dd3;
     --naranja: #da630c;
+    --naranja-claro: #fdb57e;
     --rojo: #cd170e;
     --azul: #19417c;
 }
