@@ -6,9 +6,12 @@ export async function getGruposProyectos() {
             Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
         },
         params: {
-            "populate[proyectos][populate][imagenPrincipal][fields][0]": "url",
-            "populate[proyectos][populate][galeria][fields]": "url",
-            "populate[proyectos][populate][videoMaqueta][fields][0]": "url",
+            "populate[proyectos][populate][imagenPrincipal][fields]": "url",
+            "populate[proyectos][populate][galeria][fields][0]": "url",
+            "populate[proyectos][populate][galeria][fields][1]": "caption",
+            "populate[proyectos][populate][videoMaqueta][fields]": "url",
+            "populate[proyectos][populate][palabrasClave][fields]":
+                "palabraClave",
             "populate[colors]": "*",
         },
     });
@@ -33,12 +36,18 @@ function formatGrupoProyecto(grupoProyecto) {
                 descripcion: proyectoAttributes.descripcion,
                 montoInversion: proyectoAttributes.montoInversion,
                 imagenPrincipal:
-                    proyectoAttributes.imagenPrincipal.data.attributes.url,
-                galeria: proyectoAttributes.galeria.data?.map((imagen) => {
-                    return imagen.attributes.url;
+                    proyectoAttributes?.imagenPrincipal?.data?.attributes.url,
+                galeria: proyectoAttributes?.galeria?.data?.map((imagen) => {
+                    return {
+                        url: imagen.attributes.url,
+                        caption: imagen.attributes.caption,
+                    };
                 }),
                 videoMaqueta:
-                    proyectoAttributes.videoMaqueta.data?.attributes.url,
+                    proyectoAttributes?.videoMaqueta?.data?.attributes.url,
+                palabrasClave: proyectoAttributes?.palabrasClave?.map(
+                    (palabraClave) => palabraClave?.palabraClave
+                ),
             };
         }),
     };

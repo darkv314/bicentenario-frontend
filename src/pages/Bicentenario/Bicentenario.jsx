@@ -36,10 +36,10 @@ function Bicentenario() {
             <HomeCarousel />
             <MapSection />
             <MapMenu />
-            {data &&
+            {data?.length &&
                 data.map((grupoProyecto) => (
                     <ProjectBanner
-                        key={grupoProyecto.nombre}
+                        key={grupoProyecto.titulo}
                         bannerColor={`var(--${grupoProyecto.colores.bannerColor})`}
                         textColor={`var(--${grupoProyecto.colores.textColor})`}
                         titulo={grupoProyecto.titulo}

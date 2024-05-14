@@ -26,7 +26,31 @@ function MapComponent({ width, height, points }) {
                             type: "Feature",
                             geometry: {
                                 type: "Point",
-                                coordinates: [-63, -18],
+                                coordinates: [-65.25964, -19.04806],
+                            },
+                        },
+                    ],
+                },
+            });
+            map.addSource("lines", {
+                type: "geojson",
+                data: {
+                    type: "FeatureCollection",
+                    features: [
+                        {
+                            type: "Feature",
+                            properties: {
+                                color: "#F7455D", // red
+                            },
+                            geometry: {
+                                type: "LineString",
+                                coordinates: [
+                                    [-65.26046744934783, -19.047941788253148],
+                                    [-65.25951940050415, -19.048730027863545],
+                                    [-65.2587796096432, -19.047804757266437],
+                                    [-65.25967953815822, -19.047071359402775],
+                                    [-65.26046744934783, -19.047941788253148],
+                                ],
                             },
                         },
                     ],
@@ -40,6 +64,17 @@ function MapComponent({ width, height, points }) {
                 layout: {
                     "icon-image": "cat",
                     "icon-size": 0.25,
+                },
+            });
+            map.addLayer({
+                id: "lines",
+                type: "line",
+                source: "lines",
+                paint: {
+                    "line-width": 5,
+                    // Use a get expression (https://maplibre.org/maplibre-style-spec/expressions/#get)
+                    // to set the line-color to a feature property value.
+                    "line-color": ["get", "color"],
                 },
             });
             let bounds = [
