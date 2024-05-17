@@ -23,3 +23,15 @@
 .ubicacion:nth-child(3) {
     color: var(--naranja);
 }
+
+.map-marker {
+    width: 40px;
+    height: 50px;
+    background-size: cover;
+    anchor-name: --anchor;
+}
+
+.map-tooltip {
+    position-anchor: --anchor;
+    insert-area: bottom;
+}

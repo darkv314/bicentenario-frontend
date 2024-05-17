@@ -65,9 +65,8 @@ function ProjectCard({ titulo, imagenPrincipal, color, onClick }) {
                     }}
                 >
                     <img
-                        src={`${
-                            import.meta.env.VITE_API_URL
-                        }${imagenPrincipal}`}
+                        src={`${import.meta.env.VITE_API_URL
+                            }${imagenPrincipal}`}
                         alt={titulo}
                     />
                 </span>
@@ -112,7 +111,7 @@ function ProjectModal({ project, color, setModal, bannerColor }) {
                 </p>
                 <section className="project-components">
                     <h2>Componentes</h2>
-                    <EmblaSlider>
+                    {project?.galeria?.length > 0 && <EmblaSlider>
                         {project?.galeria?.map((imagen, index) => (
                             <div
                                 className="embla__slide"
@@ -120,12 +119,11 @@ function ProjectModal({ project, color, setModal, bannerColor }) {
                             >
                                 <div className="project-image-container">
                                     {isLoading && (
-                                        <BarLoader color={bannerColor} />
+                                        <BarLoader size={50} color={bannerColor} />
                                     )}
                                     <img
-                                        src={`${import.meta.env.VITE_API_URL}${
-                                            imagen.url
-                                        }`}
+                                        src={`${import.meta.env.VITE_API_URL}${imagen.url
+                                            }`}
                                         alt={imagen.caption}
                                         onLoad={() => setIsLoading(false)} // Image loaded, hide icon
                                         style={{
@@ -140,12 +138,12 @@ function ProjectModal({ project, color, setModal, bannerColor }) {
                                 </div>
                             </div>
                         ))}
-                    </EmblaSlider>
+                    </EmblaSlider>}
                     <div
                         className="project-key-words"
                         style={{ backgroundColor: bannerColor, color }}
                     >
-                        <EmblaSlider buttonColor={color}>
+                        {project?.palabrasClave?.length > 0 && <EmblaSlider buttonColor={color}>
                             {project?.palabrasClave?.map(
                                 (palabraClave, index) => (
                                     <div
@@ -156,15 +154,14 @@ function ProjectModal({ project, color, setModal, bannerColor }) {
                                     </div>
                                 )
                             )}
-                        </EmblaSlider>
+                        </EmblaSlider>}
                     </div>
-                    <video
+                    {project?.videoMaqueta && <video
                         className="project-video"
                         controls
-                        src={`${import.meta.env.VITE_API_URL}${
-                            project?.videoMaqueta
-                        }`}
-                    ></video>
+                        src={`${import.meta.env.VITE_API_URL}${project?.videoMaqueta
+                            }`}
+                    ></video>}
                 </section>
             </div>
         </div>
