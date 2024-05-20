@@ -12,7 +12,7 @@ import ProjectBanner from "./components/ProjectBanner";
 import PlanesComplementarios from "./components/PlanesComplementarios";
 import { useQuery } from "@tanstack/react-query";
 import { getGruposProyectos } from "../../services/GroupoProyectos";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Bicentenario() {
     const { data } = useQuery({
