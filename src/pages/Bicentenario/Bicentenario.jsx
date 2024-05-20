@@ -12,12 +12,21 @@ import ProjectBanner from "./components/ProjectBanner";
 import PlanesComplementarios from "./components/PlanesComplementarios";
 import { useQuery } from "@tanstack/react-query";
 import { getGruposProyectos } from "../../services/GroupoProyectos";
+import { useEffect } from "react";
 
 function Bicentenario() {
     const { data } = useQuery({
         queryKey: ["gruposProyectos"],
         queryFn: () => getGruposProyectos(),
     });
+
+    const [grupoProyectos, setGrupoProyectos] = useState([])
+
+    useEffect(() => {
+        if (data) {
+            setGrupoProyectos(data.sort(function(a, b){return a.id - b.id}))
+        }
+    }, [data]);
 
     return (
         <div className="bicentenario-container">
@@ -36,8 +45,8 @@ function Bicentenario() {
             <HomeCarousel />
             <MapSection />
             <MapMenu />
-            {data?.length &&
-                data.map((grupoProyecto) => (
+            {grupoProyectos?.length &&
+                grupoProyectos.map((grupoProyecto) => (
                     <ProjectBanner
                         key={grupoProyecto.titulo}
                         bannerColor={`var(--${grupoProyecto.colores.bannerColor})`}
@@ -66,7 +75,7 @@ function MapSection() {
         },
         {
             img: ubicacionNaranja,
-            title: "Centro historico",
+            title: "Centro histórico",
         },
     ];
 
@@ -84,7 +93,7 @@ function MapSection() {
                     <ul>
                         <li>Ordenamiento territorial</li>
                         <li>Movilidad urbana</li>
-                        <li>Comunicación social estrategica</li>
+                        <li>Comunicación social estratégica</li>
                         <li>Fortalecimiento de la gestión municipal</li>
                     </ul>
                 </span>

@@ -26,7 +26,7 @@ function PlanesComplementarios() {
     return (
         <section className="planes-complementarios">
             <div className="planes-title">
-                <h2>Planes complementarios</h2>
+                <h2>PLANES COMPLEMENTARIOS</h2>
                 <span>
                     {Array.from({ length: 4 }).map((_, index) => (
                         <div
