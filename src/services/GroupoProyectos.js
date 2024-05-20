@@ -18,12 +18,13 @@ export async function getGruposProyectos() {
     const data = (await response).data.data.map((grupoProyecto) =>
         formatGrupoProyecto(grupoProyecto)
     );
-    return data;
+    return data.sort(function(a, b){return a.id - b.id});
 }
 
 function formatGrupoProyecto(grupoProyecto) {
     const grupoProyectoAttributes = grupoProyecto.attributes;
     return {
+        id: grupoProyecto.id,
         titulo: grupoProyectoAttributes.titulo,
         colores: {
             bannerColor: grupoProyectoAttributes.colors.bannerColor,

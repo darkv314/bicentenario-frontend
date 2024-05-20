@@ -12,21 +12,12 @@ import ProjectBanner from "./components/ProjectBanner";
 import PlanesComplementarios from "./components/PlanesComplementarios";
 import { useQuery } from "@tanstack/react-query";
 import { getGruposProyectos } from "../../services/GroupoProyectos";
-import { useEffect, useState } from "react";
 
 function Bicentenario() {
     const { data } = useQuery({
         queryKey: ["gruposProyectos"],
         queryFn: () => getGruposProyectos(),
     });
-
-    const [grupoProyectos, setGrupoProyectos] = useState([])
-
-    useEffect(() => {
-        if (data) {
-            setGrupoProyectos(data.sort(function(a, b){return a.id - b.id}))
-        }
-    }, [data]);
 
     return (
         <div className="bicentenario-container">
@@ -45,8 +36,8 @@ function Bicentenario() {
             <HomeCarousel />
             <MapSection />
             <MapMenu />
-            {grupoProyectos?.length &&
-                grupoProyectos.map((grupoProyecto) => (
+            {data?.length &&
+                data.map((grupoProyecto) => (
                     <ProjectBanner
                         key={grupoProyecto.titulo}
                         bannerColor={`var(--${grupoProyecto.colores.bannerColor})`}
