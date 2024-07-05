@@ -37,7 +37,7 @@
     font-weight: 700;
     color: #333;
     text-align: center;
-    font-family: "Poppins", sans-serif;
+    font-family: "MyriadPro", sans-serif;
 
     @media (max-width: 350px) {
         font-size: 1.5rem;

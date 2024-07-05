@@ -138,7 +138,7 @@ function TimeLineItem({ icon, image, content, title, bgcolor, doc }) {
                                 key={index}
                                 style={{
                                     alignSelf: "center",
-                                    fontFamily: `"Poppins", sans-serif`,
+                                    fontFamily: `"MyriadPro", sans-serif`,
                                 }}
                             >
                                 {item}

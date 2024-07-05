@@ -1,11 +1,10 @@
 import { Ubicacion } from "../../components/shared/Map/MapComponent";
 import MapComponent from "../../components/shared/Map/MapComponent";
-import test from "../../assets/bicentenarioImages/menuMap/proyecto/test.jpeg";
 import HomeCarousel from "./components/HomeCarousel";
 import ubicacionVerde from "../../assets/bicentenarioImages/menuMap/ubicaciones/ubicacionVerde.png";
 import ubicacionMorada from "../../assets/bicentenarioImages/menuMap/ubicaciones/ubicacionMorada.png";
 import ubicacionNaranja from "../../assets/bicentenarioImages/menuMap/ubicaciones/ubicacionNaranja.png";
-import banerAlcalde from "../../assets/bicentenarioImages/banerAlcalde.jpg";
+import banerAlcalde from "../../assets/bicentenarioImages/bannerAlcalde.png";
 import "./Bicentenario.css";
 import MapMenu from "./components/MapMenu";
 import ProjectBanner from "./components/ProjectBanner";

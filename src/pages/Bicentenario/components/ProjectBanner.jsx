@@ -65,8 +65,9 @@ function ProjectCard({ titulo, imagenPrincipal, color, onClick }) {
                     }}
                 >
                     <img
-                        src={`${import.meta.env.VITE_API_URL
-                            }${imagenPrincipal}`}
+                        src={`${
+                            import.meta.env.VITE_API_URL
+                        }${imagenPrincipal}`}
                         alt={titulo}
                     />
                 </span>
@@ -90,79 +91,141 @@ function ProjectCard({ titulo, imagenPrincipal, color, onClick }) {
 
 function ProjectModal({ project, color, setModal, bannerColor }) {
     const [isLoading, setIsLoading] = useState(true);
+    const [selectedImage, setSelectedImage] = useState("");
     return (
-        <div
-            onClick={() => setModal(false)}
-            className="modal-container"
-            style={{ color }}
-        >
-            <div onClick={(e) => e.stopPropagation()} className="project-modal">
-                <button
-                    onClick={() => setModal(false)}
-                    className="close-modal-button"
+        <>
+            {selectedImage && (
+                <ImageModal
+                    imgSrc={selectedImage}
+                    setSelectedImage={setSelectedImage}
+                />
+            )}
+            <div
+                onClick={() => setModal(false)}
+                className="modal-container"
+                style={{ color }}
+            >
+                <div
+                    onClick={(e) => e.stopPropagation()}
+                    className="project-modal"
                 >
-                    <IconoirProvider>
-                        <Cancel color="red" />
-                    </IconoirProvider>
-                </button>
-                <h1>{project?.titulo}</h1>
-                <p style={{ border: `${color} 3px solid` }}>
-                    Monto de inversión: {project?.montoInversion}Bs.
-                </p>
-                <section className="project-components">
-                    <h2>Componentes</h2>
-                    {project?.galeria?.length > 0 && <EmblaSlider>
-                        {project?.galeria?.map((imagen, index) => (
-                            <div
-                                className="embla__slide"
-                                key={`${imagen}${index}`}
-                            >
-                                <div className="project-image-container">
-                                    {isLoading && (
-                                        <BarLoader size={50} color={bannerColor} />
-                                    )}
-                                    <img
-                                        src={`${import.meta.env.VITE_API_URL}${imagen.url
-                                            }`}
-                                        alt={imagen.caption}
-                                        onLoad={() => setIsLoading(false)} // Image loaded, hide icon
-                                        style={{
-                                            display: isLoading
-                                                ? "none"
-                                                : "block",
-                                        }} // Hide image initially
-                                    />
-                                    <span className="img-caption">
-                                        {imagen.caption}
-                                    </span>
-                                </div>
-                            </div>
-                        ))}
-                    </EmblaSlider>}
-                    <div
-                        className="project-key-words"
-                        style={{ backgroundColor: bannerColor, color }}
+                    <button
+                        onClick={() => setModal(false)}
+                        className="close-modal-button"
                     >
-                        {project?.palabrasClave?.length > 0 && <EmblaSlider buttonColor={color}>
-                            {project?.palabrasClave?.map(
-                                (palabraClave, index) => (
+                        <IconoirProvider>
+                            <Cancel color="red" />
+                        </IconoirProvider>
+                    </button>
+                    <h1>{project?.titulo}</h1>
+                    <p style={{ border: `${color} 3px solid` }}>
+                        Monto de inversión:{" "}
+                        {project?.montoInversion.toLocaleString("en")} Bs.
+                    </p>
+                    <section className="project-components">
+                        <h2>Componentes</h2>
+                        {project?.galeria?.length > 0 && (
+                            <EmblaSlider>
+                                {project?.galeria?.map((imagen, index) => (
                                     <div
                                         className="embla__slide"
-                                        key={`${palabraClave}${index}`}
+                                        key={`${imagen}${index}`}
                                     >
-                                        <span key={index}>{palabraClave}</span>
+                                        <div
+                                            className="project-image-container"
+                                            onClick={() =>
+                                                setSelectedImage(
+                                                    `${
+                                                        import.meta.env
+                                                            .VITE_API_URL
+                                                    }${imagen.url}`
+                                                )
+                                            }
+                                        >
+                                            {isLoading && (
+                                                <BarLoader
+                                                    size={50}
+                                                    color={bannerColor}
+                                                />
+                                            )}
+                                            <img
+                                                src={`${
+                                                    import.meta.env.VITE_API_URL
+                                                }${imagen.url}`}
+                                                alt={imagen.caption}
+                                                onLoad={() =>
+                                                    setIsLoading(false)
+                                                } // Image loaded, hide icon
+                                                style={{
+                                                    display: isLoading
+                                                        ? "none"
+                                                        : "block",
+                                                }} // Hide image initially
+                                            />
+                                            <span className="img-caption">
+                                                {imagen.caption}
+                                            </span>
+                                        </div>
                                     </div>
-                                )
+                                ))}
+                            </EmblaSlider>
+                        )}
+                        <div
+                            className="project-key-words"
+                            style={{ backgroundColor: bannerColor, color }}
+                        >
+                            {project?.palabrasClave?.length > 0 && (
+                                <EmblaSlider buttonColor={color}>
+                                    {project?.palabrasClave?.map(
+                                        (palabraClave, index) => (
+                                            <div
+                                                className="embla__slide"
+                                                key={`${palabraClave}${index}`}
+                                            >
+                                                <span
+                                                    className="key-container"
+                                                    key={index}
+                                                >
+                                                    {palabraClave}
+                                                </span>
+                                            </div>
+                                        )
+                                    )}
+                                </EmblaSlider>
                             )}
-                        </EmblaSlider>}
-                    </div>
-                    {project?.videoMaqueta && <video
-                        className="project-video"
-                        controls
-                        src={`${import.meta.env.VITE_API_URL}${project?.videoMaqueta
-                            }`}
-                    ></video>}
-                </section>
+                        </div>
+                        {project?.videoMaqueta && (
+                            <video
+                                className="project-video"
+                                controls
+                                src={`${import.meta.env.VITE_API_URL}${
+                                    project?.videoMaqueta
+                                }`}
+                            ></video>
+                        )}
+                    </section>
+                </div>
+            </div>
+        </>
+    );
+}
+
+function ImageModal({ imgSrc, setSelectedImage }) {
+    return (
+        <div
+            onClick={() => setSelectedImage("")}
+            className="image-modal-container modal-container"
+        >
+            <button
+                onClick={() => setSelectedImage(false)}
+                className="close-image-modal-button close-modal-button"
+            >
+                <IconoirProvider>
+                    <Cancel color="red" />
+                </IconoirProvider>
+            </button>
+            <div onClick={(e) => e.stopPropagation()} className="image-modal">
+                <img src={imgSrc} alt="Imagen" />
             </div>
         </div>
     );

@@ -8,7 +8,7 @@
         padding-top: 1rem;
         gap: 1rem;
     }
-    font-family: "Poppins", sans-serif;
+    font-family: "MyriadPro", sans-serif;
 }
 
 .header-bicentenario {
@@ -119,7 +119,7 @@
 
 .planes {
     color: black;
-    font-family: "Poppins", sans-serif;
+    font-family: "MyriadPro", sans-serif;
     h3 {
         font-size: 1.2rem;
         font-family: inherit;

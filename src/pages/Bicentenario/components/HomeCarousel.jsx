@@ -1,6 +1,6 @@
-import carousel1 from "../../../assets/bicentenarioImages/carousel/carousel1.jpg";
-import carousel2 from "../../../assets/bicentenarioImages/carousel/carousel2.jpg";
-import carousel3 from "../../../assets/bicentenarioImages/carousel/carousel3.jpg";
+import carousel1 from "../../../assets/bicentenarioImages/carousel/carousel1.png";
+import carousel2 from "../../../assets/bicentenarioImages/carousel/carousel2.png";
+import carousel3 from "../../../assets/bicentenarioImages/carousel/carousel3.png";
 import "./HomeCarousel.css";
 import { useState, useRef, useEffect } from "react";
 

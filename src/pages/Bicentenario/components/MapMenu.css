@@ -41,8 +41,9 @@
 }
 
 .titles h3 {
-    font-family: "Poppins", sans-serif;
+    font-family: "MyriadPro", sans-serif;
     cursor: default;
+    text-transform: uppercase;
     color: rgb(181, 181, 181);
 }
 

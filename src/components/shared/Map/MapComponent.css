@@ -1,5 +1,5 @@
 .ubicacion {
-    font-family: "Poppins", sans-serif;
+    font-family: "MyriadPro", sans-serif;
     display: flex;
     gap: 0.25rem;
     align-items: center;
@@ -10,7 +10,7 @@
 }
 
 .ubicacion h3 {
-    font-family: "Poppins", sans-serif;
+    font-family: "MyriadPro", sans-serif;
     font-size: 0.95rem;
 }
 

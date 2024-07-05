@@ -10,7 +10,7 @@ function MapMenu() {
     const icons = [
         {
             icon: espacioVerde,
-            title: "Mejora de Áreas verdes y espacios publicos",
+            title: "Mejora de Áreas verdes y espacios públicos",
         },
         {
             icon: movilidadUrbana,
